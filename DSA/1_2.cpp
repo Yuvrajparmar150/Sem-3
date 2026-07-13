@@ -6,6 +6,8 @@
 // way that requires fewer passes?
 
 #include<iostream>
+#include<vector>
+#include<unordered_map>
 using namespace std;    
 
 int main(){
@@ -13,11 +15,21 @@ int main(){
     cout<<"Enter the number of books borrowed in the month: ";
     cin>>n;
     cout<<"Enter the book IDs: ";
-    int arr[n];
+    vector<int> arr(n);
     for(int i=0;i<n;i++){   
         cin>>arr[i];
     }
-    
+    unordered_map<int,int> count;
+    for(int id : arr){
+        count[id]++;
+    }     
+    cout<<"Books borrowed more than once: ";
+    for(auto it : count){
+        if(it.second > 1){
+            cout<<it.first<<" ";
+        }
+    }
+    return 0;
 
 
 }
