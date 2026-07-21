@@ -1,0 +1,18 @@
+
+body{
+    background-color: aqua;
+    text-align: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+
+  width:400px;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
