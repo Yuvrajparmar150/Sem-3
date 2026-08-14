@@ -27,7 +27,7 @@ int binarySearchRecursive(const vector<int>& codes, int target, int left, int ri
         // search in left half
         return binarySearchRecursive(codes, target, left, mid - 1);
     }
-}
+}         
 
 int main() {
     // Sorted catalog of book codes
