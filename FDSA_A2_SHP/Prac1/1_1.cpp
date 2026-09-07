@@ -18,7 +18,7 @@ int main(){
     }
     cout<<"Enter no. of hours:";
     cin>>h;
-   int n=h%10;
+    n=h%10;
     for(int i=0;i<n;i++){
         int temp=arr[0];
         for(int j=0;j<9;j++){
