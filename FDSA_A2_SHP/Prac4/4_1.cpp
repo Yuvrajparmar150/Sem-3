@@ -4,66 +4,171 @@
 // three insertion types and print the final queue after each operation
 
 #include <iostream>
-#include <deque>
+#include <string>
 using namespace std;
 
-int main() {
-    deque<int> patients;
+struct Node
+{
+    string name;
+    Node* next;
+};
 
-    int n;
-    cout << "Enter number of operations: ";
-    cin >> n;
+// Display queue from front to back
+void printQueue(Node* head)
+{
+    cout << "Queue (Front to Back): ";
 
-    for (int i = 0; i < n; i++) {
-        int type, token;
+    Node* temp = head;
 
-        cout << "\nEnter operation type (1-Front, 2-End, 3-Position): ";
-        cin >> type;
-
-        if (type == 1) {
-            cout << "Enter patient token: ";
-            cin >> token;
-
-            patients.push_front(token);
-        }
-        else if (type == 2) {
-            // Add routine patient at end
-            cout << "Enter patient token: ";
-            cin >> token;
-
-            patients.push_back(token);
-        }
-        else if (type == 3) {
-
-            int position;
-
-            cout << "Enter patient token: ";
-            cin >> token;
-
-            cout << "Enter position: ";
-            cin >> position;
-
-            if (position >= 0 && position <= patients.size()) {
-                patients.insert(patients.begin() + position, token);
-            }
-            else {
-                cout << "Invalid position!" << endl;
-                continue;
-            }
-        }
-        else {
-            cout << "Invalid operation!" << endl;
-            continue;
-        }
-
-        cout << "Current Queue: ";
-
-        for (int patient : patients) {
-            cout << patient << " ";
-        }
-
-        cout << endl;
+    while (temp != nullptr)
+    {
+        cout << temp->name << " ";
+        temp = temp->next;
     }
+
+    cout << endl;
+}
+
+// Add critical patient at the front
+void addCritical(Node*& head, const string& patient)
+{
+    Node* newNode = new Node{patient, head};
+
+    head = newNode;
+
+    printQueue(head);
+}
+
+// Add routine patient at the end
+void addRoutine(Node*& head, const string& patient)
+{
+    Node* newNode = new Node{patient, nullptr};
+
+    if (head == nullptr)
+    {
+        head = newNode;
+    }
+    else
+    {
+        Node* temp = head;
+
+        while (temp->next != nullptr)
+        {
+            temp = temp->next;
+        }
+
+        temp->next = newNode;
+    }
+
+    printQueue(head);
+}
+
+// Add priority patient at a specific position
+void addPriority(Node*& head, const string& patient, int position)
+{
+    Node* newNode = new Node{patient, nullptr};
+
+    // Position 0 means front
+    if (position == 0)
+    {
+        newNode->next = head;
+        head = newNode;
+
+        printQueue(head);
+        return;
+    }
+
+    Node* temp = head;
+    int index = 0;
+
+    // Move to node just before required position
+    while (temp != nullptr && index < position - 1)
+    {
+        temp = temp->next;
+        index++;
+    }
+
+    // Position is greater than queue length
+    if (temp == nullptr)
+    {
+        cout << "Invalid position!" << endl;
+
+        delete newNode;
+        return;
+    }
+
+    // Insert new node
+    newNode->next = temp->next;
+    temp->next = newNode;
+
+    printQueue(head);
+}
+
+int main()
+{
+    Node* head = nullptr;
+
+    int choice;
+    int position;
+    string name;
+
+    do
+    {
+        cout << "\n--- Hospital Queue - Insertion ---\n";
+        cout << "1. Add Critical Patient (Front)\n";
+        cout << "2. Add Routine Patient (End)\n";
+        cout << "3. Add Priority Patient (Specific Position)\n";
+        cout << "4. Display Queue\n";
+        cout << "5. Exit\n";
+
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+            case 1:
+                cin.ignore();
+
+                cout << "Enter patient name: ";
+                getline(cin, name);
+
+                addCritical(head, name);
+                break;
+
+            case 2:
+                cin.ignore();
+
+                cout << "Enter patient name: ";
+                getline(cin, name);
+
+                addRoutine(head, name);
+                break;
+
+            case 3:
+                cin.ignore();
+
+                cout << "Enter patient name: ";
+                getline(cin, name);
+
+                cout << "Enter position (0 = front): ";
+                cin >> position;
+
+                addPriority(head, name, position);
+                break;
+
+            case 4:
+                printQueue(head);
+                break;
+
+            case 5:
+                cout << "Exiting program..." << endl;
+                break;
+
+            default:
+                cout << "Invalid choice!" << endl;
+        }
+
+    } while (choice != 5);
 
     return 0;
 }
