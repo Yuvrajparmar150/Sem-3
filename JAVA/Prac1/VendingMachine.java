@@ -1,13 +1,4 @@
-// Vending machine (VendingMachine.java, main in this file) 
-// (a) Define an enum Coin with constants ONE, TWO, FIVE, TEN. 
-// (b) In main, set a snack price of 15 and a running total of 0; create a Scanner. 
-// (c) Loop: read a coin name, use a switch expression to convert the Coin to its value 
-// (ONE→1, TWO→2, FIVE→5, TEN→10), add it to the total, and print the total so 
-// far. 
-// (d) Stop the loop once the total reaches 15 or more. 
-// (e) Print the change to return (total − 15). 
-// Expected output: TEN then FIVE prints “Paid. Change: 0”; TEN then TEN prints 
-// “Paid. Change: 5”.
+
 
 import java.util.Scanner;
 
