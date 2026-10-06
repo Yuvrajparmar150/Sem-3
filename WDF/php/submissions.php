@@ -1,10 +1,10 @@
 <?php
 /**
  * Practical 7: Submissions & CSV/JSON Data Records Viewer
- * File: submissions.php
+ * File: php/submissions.php
  */
 
-$dataDir = __DIR__ . '/data';
+$dataDir = dirname(__DIR__) . '/data';
 $jsonFile = $dataDir . '/registrations.json';
 $csvFile  = $dataDir . '/registrations.csv';
 
@@ -25,7 +25,7 @@ if (file_exists($contactFile)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Practical 7: CSV & JSON Submissions | StudentHub</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to Content</a>
@@ -33,18 +33,18 @@ if (file_exists($contactFile)) {
   <!-- Header -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="index.html" class="brand-logo">
+      <a href="../index.html" class="brand-logo">
         <span class="logo-icon">🎓</span>
         <span>StudentHub</span>
-        <span class="badge-tag">PHP / Backend</span>
+        <span class="badge-tag">PHP Backend</span>
       </a>
       <nav aria-label="Main Navigation">
         <ul class="nav-links">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
-          <li class="nav-item"><a href="register.html" class="nav-link">Register</a></li>
-          <li class="nav-item"><a href="admin.html" class="nav-link">Admin Portal</a></li>
+          <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="../dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="../events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="../register.html" class="nav-link">Register</a></li>
+          <li class="nav-item"><a href="../admin.html" class="nav-link">Admin Portal</a></li>
           <li class="nav-item"><a href="submissions.php" class="nav-link active">Submissions (PHP)</a></li>
         </ul>
       </nav>
@@ -56,21 +56,21 @@ if (file_exists($contactFile)) {
 
   <main id="main-content" class="page-wrapper container">
     <div class="breadcrumb">
-      <a href="index.html">Home</a>
+      <a href="../index.html">Home</a>
       <span class="separator">/</span>
-      <a href="admin.html">Admin</a>
+      <a href="../admin.html">Admin</a>
       <span class="separator">/</span>
       <span class="current">PHP File Storage Submissions (Practical 7)</span>
     </div>
 
     <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(6,182,212,0.08));">
       <h2>Server-Side Stored Records (CSV & JSON)</h2>
-      <p>This page dynamically parses records stored by <code>process_register.php</code> in both <code>data/registrations.json</code> and <code>data/registrations.csv</code> with strict validation and sanitization.</p>
+      <p>This page dynamically parses records stored by <code>php/process_register.php</code> in both <code>data/registrations.json</code> and <code>data/registrations.csv</code> with strict validation and sanitization.</p>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
         <button onclick="exportTableToCSV('studenthub_registrations.csv')" class="btn btn-primary btn-sm">
           📥 Download CSV File
         </button>
-        <a href="register.html" class="btn btn-outline-primary btn-sm">
+        <a href="../register.html" class="btn btn-outline-primary btn-sm">
           ➕ Add New Registration
         </a>
       </div>
@@ -88,19 +88,19 @@ if (file_exists($contactFile)) {
       <div class="stat-card">
         <div class="stat-icon green">💾</div>
         <div class="stat-info">
-          <div class="stat-value"><?= round(filesize($jsonFile) / 1024, 2); ?> KB</div>
+          <div class="stat-value"><?= file_exists($jsonFile) ? round(filesize($jsonFile) / 1024, 2) : 0; ?> KB</div>
           <div class="stat-label">JSON Storage Size</div>
         </div>
       </div>
       <div class="stat-card">
         <div class="stat-icon purple">📊</div>
         <div class="stat-info">
-          <div class="stat-value"><?= round(filesize($csvFile) / 1024, 2); ?> KB</div>
+          <div class="stat-value"><?= file_exists($csvFile) ? round(filesize($csvFile) / 1024, 2) : 0; ?> KB</div>
           <div class="stat-label">CSV Storage Size</div>
         </div>
       </div>
       <div class="stat-card">
-        <div class="stat-info amber">✉️</div>
+        <div class="stat-icon amber">✉️</div>
         <div class="stat-info">
           <div class="stat-value"><?= count($contacts); ?></div>
           <div class="stat-label">Contact Inquiries</div>
@@ -111,7 +111,7 @@ if (file_exists($contactFile)) {
     <!-- Registration Records Table -->
     <section class="card" style="margin-bottom: 2.5rem;">
       <div class="card-header">
-        <h3>Student Registration Records (From <code>registrations.json</code>)</h3>
+        <h3>Student Registration Records (From <code>data/registrations.json</code>)</h3>
         <span class="badge badge-primary"><?= count($registrations); ?> Records</span>
       </div>
       <div class="table-responsive">
@@ -155,7 +155,7 @@ if (file_exists($contactFile)) {
     <!-- Contacts Table -->
     <section class="card">
       <div class="card-header">
-        <h3>Contact Us Messages (From <code>contacts.json</code>)</h3>
+        <h3>Contact Us Messages (From <code>data/contacts.json</code>)</h3>
         <span class="badge badge-primary"><?= count($contacts); ?> Messages</span>
       </div>
       <div class="table-responsive">
@@ -199,6 +199,6 @@ if (file_exists($contactFile)) {
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

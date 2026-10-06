@@ -1,7 +1,7 @@
 <?php
 /**
  * Practical 7: PHP Form Processing with Server-Side Validation and CSV/JSON File Storage
- * File: process_register.php
+ * File: php/process_register.php
  * Student: Yuvraj Parmar (25DCE070) - CHARUSAT FTE
  */
 
@@ -69,8 +69,8 @@ if (!empty($errors)) {
     exit;
 }
 
-// 3. Prepare Storage Files
-$dataDir = __DIR__ . '/data';
+// 3. Prepare Storage Files in ../data
+$dataDir = dirname(__DIR__) . '/data';
 if (!is_dir($dataDir)) {
     mkdir($dataDir, 0755, true);
 }

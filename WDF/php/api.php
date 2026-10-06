@@ -1,14 +1,14 @@
 <?php
 /**
  * Practical 6 & 7: REST API Endpoint Bridge
- * File: api.php
+ * File: php/api.php
  */
 
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 
 $action = $_GET['action'] ?? '';
-$dataDir = __DIR__ . '/data';
+$dataDir = dirname(__DIR__) . '/data';
 
 switch ($action) {
     case 'get_events':

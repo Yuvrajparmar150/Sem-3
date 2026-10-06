@@ -1155,8 +1155,8 @@ function submitRegistrationForm(form) {
     submitBtn.innerHTML = '⏳ Processing Registration...';
   }
 
-  // Attempt POST to process_register.php
-  fetch('process_register.php', {
+  // Attempt POST to php/process_register.php
+  fetch('php/process_register.php', {
     method: 'POST',
     body: formData
   })
@@ -1219,7 +1219,7 @@ window.handleContactSubmit = function(e) {
   btn.disabled = true;
   btn.innerHTML = 'Sending...';
 
-  fetch('process_contact.php', {
+  fetch('php/process_contact.php', {
     method: 'POST',
     body: formData
   })
@@ -1247,7 +1247,7 @@ window.handleFeedbackSubmit = function(e) {
   btn.disabled = true;
   btn.innerHTML = 'Submitting...';
 
-  fetch('process_feedback.php', {
+  fetch('php/process_feedback.php', {
     method: 'POST',
     body: formData
   })

@@ -1,7 +1,7 @@
 <?php
 /**
  * Practical 7: Process Contact Us Form Submissions
- * File: process_contact.php
+ * File: php/process_contact.php
  */
 
 header('Content-Type: application/json; charset=utf-8');
@@ -23,7 +23,7 @@ if (empty($name) || empty($email) || empty($message) || !filter_var($email, FILT
     exit;
 }
 
-$dataDir = __DIR__ . '/data';
+$dataDir = dirname(__DIR__) . '/data';
 if (!is_dir($dataDir)) mkdir($dataDir, 0755, true);
 
 $jsonFile = $dataDir . '/contacts.json';

@@ -69,6 +69,13 @@ StudentHub/
 ├── js/
 │   └── main.js                   # Master JS logic (DOM, Carousel, Modals, Validation, CAPTCHA, Fetch API)
 │
+├── php/
+│   ├── process_register.php      # Practical 7 PHP POST processor & file storage (JSON/CSV)
+│   ├── process_contact.php       # Practical 7 PHP contact inquiry processor
+│   ├── process_feedback.php      # Practical 7 PHP feedback & star rating processor
+│   ├── submissions.php           # Practical 7 PHP server-rendered CSV/JSON data table viewer
+│   └── api.php                   # Lightweight REST JSON API router
+│
 ├── data/
 │   ├── events.json               # 16+ Campus Events with tags, seats, venue, speaker (P6)
 │   ├── students.json             # 16+ Student directory profiles with GPA & skills (P6)
@@ -77,10 +84,14 @@ StudentHub/
 │   ├── locations.json            # Country -> State -> City hierarchy for dependent dropdowns (P6)
 │   ├── registrations.json        # Practical 7 JSON registration storage
 │   ├── registrations.csv         # Practical 7 CSV registration storage
-│   ├── contacts.json             # Stored contact inquiries (JSON)
-│   ├── contacts.csv              # Stored contact inquiries (CSV)
-│   ├── feedbacks.json            # Stored ratings & reviews (JSON)
-│   └── feedbacks.csv             # Stored ratings & reviews (CSV)
+│   ├── contacts.json / .csv      # Practical 7 Contact inquiries storage
+│   └── feedbacks.json / .csv     # Practical 7 Feedback ratings storage
+│
+├── docs/                         # Assignment, Syllabus & Design Documentation
+│   ├── Practical_List_ITUE203_WDF_2026_27.pdf
+│   ├── Requirement analysis.docx
+│   ├── Site Map and Wire frame.docx
+│   └── Website preview.docx
 │
 ├── index.html                    # Home / Landing Portal with Hero Carousel & Live Widgets
 ├── dashboard.html                # Student Dashboard with metrics, schedule & alerts
@@ -98,15 +109,6 @@ StudentHub/
 ├── login.html                    # Authentication portal with role switcher & demo logins
 ├── settings.html                 # Account preferences, theme switcher & cache management
 ├── admin.html                    # Admin Management Portal & Submissions Viewer (P7)
-│
-├── process_register.php          # Practical 7 PHP POST processor & file storage (JSON/CSV)
-├── process_contact.php           # Practical 7 PHP contact inquiry processor
-├── process_feedback.php          # Practical 7 PHP feedback & star rating processor
-├── submissions.php               # Practical 7 PHP server-rendered CSV/JSON data table viewer
-├── api.php                       # Lightweight REST JSON API router
-│
-├── class.css                     # Backward-compatibility stylesheet bridge
-├── script.js                     # Root JavaScript bridge
 └── README.md                     # Comprehensive Project Documentation
 ```
 

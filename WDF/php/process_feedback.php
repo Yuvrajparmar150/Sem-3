@@ -1,7 +1,7 @@
 <?php
 /**
  * Practical 7: Process Feedback and Ratings
- * File: process_feedback.php
+ * File: php/process_feedback.php
  */
 
 header('Content-Type: application/json; charset=utf-8');
@@ -24,7 +24,7 @@ if (empty($comments)) {
     exit;
 }
 
-$dataDir = __DIR__ . '/data';
+$dataDir = dirname(__DIR__) . '/data';
 if (!is_dir($dataDir)) mkdir($dataDir, 0755, true);
 
 $jsonFile = $dataDir . '/feedbacks.json';
