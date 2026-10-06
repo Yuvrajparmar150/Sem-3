@@ -1,0 +1,4 @@
+"Registration ID","Full Name","Student ID","Email","Mobile","Course","Year","Gender","Country","State","City","Timestamp","Status"
+"REG-1001","Yuvraj Parmar","25DCE070","25dce070@charusat.edu.in","9876543210","Computer Engineering","2nd Year","Male","India","Gujarat","Anand","2026-10-06 10:15:30","Verified"
+"REG-1002","Aarav Sharma","25DCE012","aarav.sharma@charusat.edu.in","9823456789","Computer Engineering","2nd Year","Male","India","Gujarat","Ahmedabad","2026-10-06 10:30:15","Verified"
+"REG-1003","Diya Patel","25DIT045","diya.patel@charusat.edu.in","9912345678","Information Technology","2nd Year","Female","India","Gujarat","Vadodara","2026-10-06 11:05:40","Verified"

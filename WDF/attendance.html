@@ -1,140 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Attendance</title>
-
- <link rel="stylesheet" href="class.css">
-
-<style>
-
-body{
-
-display:block;
-background:#eef3f8;
-
-}
-
-.navbar{
-
-background:#0f4c81;
-padding:18px;
-text-align:center;
-
-}
-
-.navbar a{
-
-margin:8px;
-
-}
-
-.container2{
-
-width:90%;
-max-width:900px;
-margin:40px auto;
-background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Attendance Records - StudentHub: Track subject-wise attendance percentages, university eligibility criteria, and leave applications.">
+  <title>Attendance Records | StudentHub</title>
+  
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="navbar">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+        <span class="badge-tag">Attendance</span>
+      </a>
 
-<a href="dashboard.html">Dashboard</a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="attendance.html" class="nav-link active">Attendance</a></li>
+          <li class="nav-item"><a href="assignments.html" class="nav-link">Assignments</a></li>
+          <li class="nav-item"><a href="results.html" class="nav-link">Results</a></li>
+          <li class="nav-item"><a href="timetable.html" class="nav-link">Timetable</a></li>
+        </ul>
+      </nav>
 
-<a href="profile.html">Profile</a>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+        <a href="index.html" class="btn btn-outline btn-sm">Log Out</a>
+        <button class="hamburger-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
 
-<a href="attendance.html">Attendance</a>
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo"><span class="logo-icon">🎓</span><span>StudentHub</span></div>
+      <button class="mobile-nav-close btn btn-outline btn-sm">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+      <li><a href="attendance.html" class="nav-link active">📈 Attendance</a></li>
+      <li><a href="assignments.html" class="nav-link">📑 Assignments</a></li>
+      <li><a href="results.html" class="nav-link">🏆 Results</a></li>
+      <li><a href="timetable.html" class="nav-link">🕒 Timetable</a></li>
+      <li><a href="profile.html" class="nav-link">👤 Profile</a></li>
+      <li><a href="events.html" class="nav-link">🎟️ Events</a></li>
+    </ul>
+  </aside>
 
-<a href="assignments.html">Assignments</a>
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="dashboard.html">Dashboard</a>
+      <span class="separator">/</span>
+      <span class="current">Attendance Record</span>
+    </div>
 
-<a href="results.html">Results</a>
+    <!-- Header Banner -->
+    <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(6,182,212,0.08));">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge badge-success" style="margin-bottom: 0.4rem;">Status: Safe (Above 80%)</span>
+          <h1>Subject-Wise Attendance Overview</h1>
+          <p style="margin-bottom: 0;">University regulations require a minimum 80% attendance in all courses for examination eligibility.</p>
+        </div>
+        <button class="btn btn-primary" data-modal-target="applyLeaveModal">📝 Apply for Leave</button>
+      </div>
+    </div>
 
-<a href="timetable.html">Timetable</a>
+    <!-- Attendance Cards Grid -->
+    <section class="grid-4" style="margin-bottom: 2.5rem;">
+      <div class="card">
+        <div class="card-header">
+          <h4>Web Development</h4>
+          <span class="badge badge-success">96%</span>
+        </div>
+        <div class="strength-meter-bar" style="margin: 0.5rem 0;">
+          <div class="strength-meter-fill" style="width: 96%; background: var(--success);"></div>
+        </div>
+        <small style="color: var(--text-secondary);">Attended: 24 / 25 Sessions</small>
+      </div>
 
-<a href="settings.html">Settings</a>
+      <div class="card">
+        <div class="card-header">
+          <h4>Programming with C++</h4>
+          <span class="badge badge-success">92%</span>
+        </div>
+        <div class="strength-meter-bar" style="margin: 0.5rem 0;">
+          <div class="strength-meter-fill" style="width: 92%; background: var(--success);"></div>
+        </div>
+        <small style="color: var(--text-secondary);">Attended: 23 / 25 Sessions</small>
+      </div>
 
-<a href="about.html">About</a>
+      <div class="card">
+        <div class="card-header">
+          <h4>Digital Electronics</h4>
+          <span class="badge badge-success">94%</span>
+        </div>
+        <div class="strength-meter-bar" style="margin: 0.5rem 0;">
+          <div class="strength-meter-fill" style="width: 94%; background: var(--success);"></div>
+        </div>
+        <small style="color: var(--text-secondary);">Attended: 22 / 24 Sessions</small>
+      </div>
 
-</div>
+      <div class="card">
+        <div class="card-header">
+          <h4>Discrete Mathematics</h4>
+          <span class="badge badge-success">88%</span>
+        </div>
+        <div class="strength-meter-bar" style="margin: 0.5rem 0;">
+          <div class="strength-meter-fill" style="width: 88%; background: var(--success);"></div>
+        </div>
+        <small style="color: var(--text-secondary);">Attended: 22 / 25 Sessions</small>
+      </div>
+    </section>
 
-<div class="container2">
+    <!-- Detailed Table -->
+    <section class="card">
+      <div class="card-header">
+        <h3>Comprehensive Course Attendance Log</h3>
+        <span class="badge badge-primary">Odd Semester 2026-27</span>
+      </div>
 
-<h1>Attendance Record</h1>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Course Code</th>
+              <th>Subject Title</th>
+              <th>Faculty</th>
+              <th>Conducted</th>
+              <th>Attended</th>
+              <th>Percentage</th>
+              <th>Exam Eligibility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ITUE203</code></td>
+              <td><strong>Web Development Frameworks</strong></td>
+              <td>Prof. S. R. Mehta</td>
+              <td>25</td>
+              <td>24</td>
+              <td><strong>96.0%</strong></td>
+              <td><span class="badge badge-success">Eligible</span></td>
+            </tr>
+            <tr>
+              <td><code>CEUE201</code></td>
+              <td><strong>Object Oriented Programming (C++)</strong></td>
+              <td>Prof. A. N. Patel</td>
+              <td>25</td>
+              <td>23</td>
+              <td><strong>92.0%</strong></td>
+              <td><span class="badge badge-success">Eligible</span></td>
+            </tr>
+            <tr>
+              <td><code>ECUE202</code></td>
+              <td><strong>Digital Electronics & Logic Design</strong></td>
+              <td>Prof. K. N. Joshi</td>
+              <td>24</td>
+              <td>22</td>
+              <td><strong>91.6%</strong></td>
+              <td><span class="badge badge-success">Eligible</span></td>
+            </tr>
+            <tr>
+              <td><code>MAUE204</code></td>
+              <td><strong>Discrete Mathematics</strong></td>
+              <td>Dr. T. G. Trivedi</td>
+              <td>25</td>
+              <td>22</td>
+              <td><strong>88.0%</strong></td>
+              <td><span class="badge badge-success">Eligible</span></td>
+            </tr>
+            <tr>
+              <td><code>PYUE205</code></td>
+              <td><strong>Engineering Physics</strong></td>
+              <td>Dr. Neha Kulkarni</td>
+              <td>22</td>
+              <td>20</td>
+              <td><strong>90.9%</strong></td>
+              <td><span class="badge badge-success">Eligible</span></td>
+            </tr>
+            <tr>
+              <td><code>HSUE206</code></td>
+              <td><strong>Communication & Soft Skills</strong></td>
+              <td>Prof. M. R. Vyas</td>
+              <td>20</td>
+              <td>19</td>
+              <td><strong>95.0%</strong></td>
+              <td><span class="badge badge-success">Eligible</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 
-<table>
+  <!-- Apply Leave Modal -->
+  <div id="applyLeaveModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Apply for Academic Leave / OD</h3>
+        <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Leave Category</label>
+          <select class="form-control">
+            <option>Medical Leave</option>
+            <option>Hackathon / Official Duty (OD)</option>
+            <option>Personal / Family Emergency</option>
+          </select>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label">From Date</label>
+            <input type="date" class="form-control">
+          </div>
+          <div class="form-group">
+            <label class="form-label">To Date</label>
+            <input type="date" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Reason / Supporting Remarks</label>
+          <textarea class="form-control" rows="3" placeholder="Provide justification or attach medical cert"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" data-modal-close>Cancel</button>
+        <button class="btn btn-primary" onclick="showToast('Leave Submitted', 'Your leave application has been routed to the Faculty Advisor.', 'success'); closeModal('applyLeaveModal');">Submit Application</button>
+      </div>
+    </div>
+  </div>
 
-<tr>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 StudentHub - CHARUSAT FTE.</p>
+      <span class="developer-tag">Yuvraj Parmar (25DCE070)</span>
+    </div>
+  </footer>
 
-<th>Subject</th>
-
-<th>Attendance</th>
-
-</tr>
-
-<tr>
-
-<td>Mathematics</td>
-
-<td>92%</td>
-
-</tr>
-
-<tr>
-
-<td>Programming</td>
-
-<td>88%</td>
-
-</tr>
-
-<tr>
-
-<td>Digital Electronics</td>
-
-<td>94%</td>
-
-</tr>
-
-<tr>
-
-<td>Physics</td>
-
-<td>90%</td>
-
-</tr>
-
-<tr>
-
-<td>Communication Skills</td>
-
-<td>96%</td>
-
-</tr>
-
-</table>
-
-<br>
-
-<a href="dashboard.html">Back to Dashboard</a>
-
-</div>
-
+  <script src="js/main.js"></script>
 </body>
-
 </html>

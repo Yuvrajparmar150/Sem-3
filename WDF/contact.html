@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Us - StudentHub: Reach out to CHARUSAT Faculty of Technology & Engineering academic helpdesk.">
+  <title>Contact Us | StudentHub (Practical 7)</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+        <span class="badge-tag">Contact</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="register.html" class="nav-link">Register</a></li>
+          <li class="nav-item"><a href="faq.html" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+        <a href="login.html" class="btn btn-outline-primary btn-sm">Login</a>
+        <button class="hamburger-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo"><span class="logo-icon">🎓</span><span>StudentHub</span></div>
+      <button class="mobile-nav-close btn btn-outline btn-sm">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+      <li><a href="events.html" class="nav-link">🎟️ Events</a></li>
+      <li><a href="register.html" class="nav-link">📝 Register</a></li>
+      <li><a href="contact.html" class="nav-link active">✉️ Contact</a></li>
+      <li><a href="about.html" class="nav-link">ℹ️ About</a></li>
+      <li><a href="faq.html" class="nav-link">❓ FAQs</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">Contact Us (Practical 7)</span>
+    </div>
+
+    <div class="card" style="margin-bottom: 2.5rem; background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(6,182,212,0.08));">
+      <span class="badge badge-primary" style="margin-bottom: 0.5rem;">Helpdesk & Support</span>
+      <h1>Get in Touch with Academic Support</h1>
+      <p style="margin-bottom: 0;">Have inquiries regarding course registration, timetable changes, hostel services, or technical portal queries? Send us a message below.</p>
+    </div>
+
+    <div class="grid-2" style="align-items: flex-start;">
+      <!-- Contact Form -->
+      <div class="card" style="padding: 2.5rem;">
+        <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Send an Inquiry (PHP Processed)</h3>
+        <form onsubmit="handleContactSubmit(event)">
+          <div class="form-group">
+            <label for="contactName" class="form-label">Full Name <span class="required">*</span></label>
+            <input type="text" id="contactName" name="name" class="form-control" placeholder="e.g. Yuvraj Parmar" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">Email Address <span class="required">*</span></label>
+            <input type="email" id="contactEmail" name="email" class="form-control" placeholder="e.g. 25dce070@charusat.edu.in" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contactSubject" class="form-label">Subject / Topic <span class="required">*</span></label>
+            <select id="contactSubject" name="subject" class="form-control" required>
+              <option value="General Inquiry">General Academic Inquiry</option>
+              <option value="Course Registration">Course Registration & Electives</option>
+              <option value="Attendance Dispute">Attendance Query / Leave Status</option>
+              <option value="Portal Bug">Technical Portal Issue</option>
+              <option value="Event Registration">Campus Hackathon & Event Query</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage" class="form-label">Your Message <span class="required">*</span></label>
+            <textarea id="contactMessage" name="message" class="form-control" rows="5" placeholder="Write your message or detailed query here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 1rem;">
+            Send Message ✉️
+          </button>
+        </form>
+      </div>
+
+      <!-- Campus Details & Info -->
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <!-- Campus Info Card -->
+        <div class="card">
+          <h3 style="margin-bottom: 1.25rem;">University Campus Details</h3>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div class="stat-icon blue" style="width: 40px; height: 40px; font-size: 1.2rem;">📍</div>
+              <div>
+                <strong>Faculty of Technology & Engineering</strong>
+                <p style="font-size: 0.875rem; margin-bottom: 0; color: var(--text-secondary);">
+                  Charotar University of Science and Technology (CHARUSAT)<br>
+                  Changa, Dist. Anand, Gujarat, India - 388421
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div class="stat-icon green" style="width: 40px; height: 40px; font-size: 1.2rem;">📞</div>
+              <div>
+                <strong>Academic Helpdesk Phone</strong>
+                <p style="font-size: 0.875rem; margin-bottom: 0; color: var(--text-secondary);">
+                  +91 (02697) 265011 / 265021 (Ext: 304)<br>
+                  Monday - Saturday: 09:00 AM - 04:30 PM
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div class="stat-icon purple" style="width: 40px; height: 40px; font-size: 1.2rem;">📧</div>
+              <div>
+                <strong>Official Email Desks</strong>
+                <p style="font-size: 0.875rem; margin-bottom: 0; color: var(--text-secondary);">
+                  studenthub@charusat.edu.in &bull; info@charusat.ac.in
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Department Contacts Table -->
+        <div class="card">
+          <h4 style="margin-bottom: 1rem;">Department Extension Directory</h4>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Department</th>
+                  <th>Location</th>
+                  <th>Ext</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Computer Engineering (CE)</td>
+                  <td>Block 3, 2nd Floor</td>
+                  <td>302</td>
+                </tr>
+                <tr>
+                  <td>Information Technology (IT)</td>
+                  <td>Block 3, 3rd Floor</td>
+                  <td>308</td>
+                </tr>
+                <tr>
+                  <td>AI & Data Science (AI&DS)</td>
+                  <td>Block 4, 1st Floor</td>
+                  <td>401</td>
+                </tr>
+                <tr>
+                  <td>Examination & Registrar Cell</td>
+                  <td>Admin Building</td>
+                  <td>105</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 StudentHub - CHARUSAT FTE.</p>
+      <span class="developer-tag">Yuvraj Parmar (25DCE070)</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

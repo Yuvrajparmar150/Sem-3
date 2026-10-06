@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Feedback & Reviews - StudentHub (Practical 7): Submit feedback and star ratings stored securely in CSV and JSON formats.">
+  <title>Student Feedback | StudentHub (Practical 7)</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+        <span class="badge-tag">Feedback</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="register.html" class="nav-link">Register</a></li>
+          <li class="nav-item"><a href="feedback.html" class="nav-link active">Feedback</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+        <a href="login.html" class="btn btn-outline-primary btn-sm">Login</a>
+        <button class="hamburger-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo"><span class="logo-icon">🎓</span><span>StudentHub</span></div>
+      <button class="mobile-nav-close btn btn-outline btn-sm">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+      <li><a href="events.html" class="nav-link">🎟️ Events</a></li>
+      <li><a href="register.html" class="nav-link">📝 Register</a></li>
+      <li><a href="feedback.html" class="nav-link active">⭐ Feedback</a></li>
+      <li><a href="faq.html" class="nav-link">❓ FAQs</a></li>
+      <li><a href="about.html" class="nav-link">ℹ️ About</a></li>
+      <li><a href="contact.html" class="nav-link">✉️ Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">Student Feedback & Ratings (Practical 7)</span>
+    </div>
+
+    <div style="max-width: 760px; margin: 0 auto;">
+      <!-- Header Banner -->
+      <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(6,182,212,0.08)); text-align: center;">
+        <span class="badge badge-primary" style="margin-bottom: 0.5rem;">Continuous Improvement</span>
+        <h1>We Value Your Feedback</h1>
+        <p style="margin-bottom: 0;">Help us improve StudentHub features, course content, and campus facilities. Submissions are processed via PHP and saved in <code>data/feedbacks.json</code> & <code>data/feedbacks.csv</code>.</p>
+      </div>
+
+      <!-- Feedback Form Card -->
+      <div class="card" style="padding: 2.5rem;">
+        <form onsubmit="handleFeedbackSubmit(event)">
+          <div class="grid-2">
+            <div class="form-group">
+              <label for="fbName" class="form-label">Your Name</label>
+              <input type="text" id="fbName" name="name" class="form-control" value="Yuvraj Parmar" placeholder="e.g. Yuvraj Parmar">
+            </div>
+            <div class="form-group">
+              <label for="fbEmail" class="form-label">Email Address</label>
+              <input type="email" id="fbEmail" name="email" class="form-control" value="25dce070@charusat.edu.in" placeholder="e.g. 25dce070@charusat.edu.in">
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label for="fbCategory" class="form-label">Feedback Category <span class="required">*</span></label>
+              <select id="fbCategory" name="category" class="form-control" required>
+                <option value="Portal UI/UX">Portal UI & Mobile Responsiveness</option>
+                <option value="Academic Features">Academic & Timetable Features</option>
+                <option value="Events & Hackathons">Events & Hackathons Module</option>
+                <option value="Facility & Labs">Campus Labs & Facilities</option>
+                <option value="General Suggestion">General Suggestion</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="fbRating" class="form-label">Overall Rating <span class="required">*</span></label>
+              <select id="fbRating" name="rating" class="form-control" required>
+                <option value="5">⭐⭐⭐⭐⭐ Excellent (5/5)</option>
+                <option value="4">⭐⭐⭐⭐ Very Good (4/5)</option>
+                <option value="3">⭐⭐⭐ Good (3/5)</option>
+                <option value="2">⭐⭐ Average (2/5)</option>
+                <option value="1">⭐ Needs Improvement (1/5)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="fbComments" class="form-label">Detailed Comments & Suggestions <span class="required">*</span></label>
+            <textarea id="fbComments" name="comments" class="form-control" rows="4" placeholder="Share your experience, feature requests, or bug reports..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 1rem;">
+            Submit Feedback ⭐
+          </button>
+        </form>
+      </div>
+
+      <!-- Recent Testimonials / Community Ratings -->
+      <div style="margin-top: 3rem;">
+        <h3 style="margin-bottom: 1.5rem;">Recent Student Experiences</h3>
+        <div class="grid-2">
+          <div class="card">
+            <div style="color: #f59e0b; font-size: 1.1rem; margin-bottom: 0.5rem;">⭐⭐⭐⭐⭐</div>
+            <p style="font-size: 0.925rem; font-style: italic;">"The dark mode toggle and fast JSON event filtering make checking campus hackathons effortless."</p>
+            <div style="display: flex; align-items: center; gap: 0.75rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
+              <div class="student-avatar" style="width: 36px; height: 36px; margin: 0;">
+                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=DiyaPatel" alt="Diya">
+              </div>
+              <div>
+                <div style="font-weight: 700; font-size: 0.85rem;">Diya Patel</div>
+                <small style="color: var(--text-muted);">2nd Year IT</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="color: #f59e0b; font-size: 1.1rem; margin-bottom: 0.5rem;">⭐⭐⭐⭐⭐</div>
+            <p style="font-size: 0.925rem; font-style: italic;">"Canvas CAPTCHA and real-time password strength meter provide great interactive feedback."</p>
+            <div style="display: flex; align-items: center; gap: 0.75rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
+              <div class="student-avatar" style="width: 36px; height: 36px; margin: 0;">
+                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=AaravSharma" alt="Aarav">
+              </div>
+              <div>
+                <div style="font-weight: 700; font-size: 0.85rem;">Aarav Sharma</div>
+                <small style="color: var(--text-muted);">2nd Year CE</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 StudentHub - CHARUSAT FTE.</p>
+      <span class="developer-tag">Yuvraj Parmar (25DCE070)</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

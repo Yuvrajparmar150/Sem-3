@@ -1,185 +1,27 @@
+/* StudentHub Modern Class Compatibility Layer */
+@import url('css/style.css');
 
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+/* Backward compatibility helpers */
+.container2 {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
-
-body{
-    background:linear-gradient(135deg,#0f4c81,#4fa3d1);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#333;
+.wrapper {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
-
-/* Card */
-
-.container{
-    width:420px;
-    max-width:90%;
-    background:#ffffff;
-    padding:40px;
-    border-radius:18px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.25);
-    text-align:center;
-}
-
-/* Headings */
-
-h1{
-    color:#0f4c81;
-    margin-bottom:15px;
-    font-size:38px;
-}
-
-h2{
-    margin-top:25px;
-    margin-bottom:20px;
-}
-
-p{
-    margin:15px 0;
-    line-height:1.5;
-}
-
-
-
-input[type=text],
-input[type=password]{
-
-    width:100%;
-    padding:14px;
-    border:1px solid #cfd8dc;
-    border-radius:10px;
-    font-size:16px;
-    transition:.3s;
-}
-
-input:focus{
-
-    outline:none;
-    border-color:#0f4c81;
-    box-shadow:0 0 8px rgba(15,76,129,.25);
-
-}
-
-/* Links */
-
-a{
-
-    text-decoration:none;
-    color:white;
-    background:#0f4c81;
-    padding:12px 28px;
-    border-radius:8px;
-    display:inline-block;
-    transition:.3s;
-    font-weight:bold;
-
-}
-
-a:hover{
-
-    background:#1565c0;
-    transform:translateY(-2px);
-
-}
-
-/* About link */
-
-.about-link{
-
-    margin-top:20px;
-}
-
-.about-link a{
-
-    background:transparent;
-    color:#0f4c81;
-    padding:0;
-}
-
-.about-link a:hover{
-
-    background:transparent;
-    color:#1565c0;
-    text-decoration:underline;
-}
-
-/* Footer */
-
-footer{
-
-    margin-top:30px;
-
-}
-
-/* Dashboard Navigation */
-
-nav{
-
-    width:100%;
-    background:#0f4c81;
-    padding:15px;
-    text-align:center;
-}
-
-nav a{
-
-    margin:5px;
-}
-
-/* Tables */
-
-table{
-
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
-}
-
-th{
-
-    background:#0f4c81;
-    color:white;
-    padding:12px;
-}
-
-td{
-
-    padding:12px;
-    border:1px solid #ddd;
-
-}
-
-tr:nth-child(even){
-
-    background:#f4f7fa;
-}
-
-/* Responsive */
-
-@media(max-width:600px){
-
-.container{
-
-    padding:25px;
-
-}
-
-h1{
-
-    font-size:30px;
-
-}
-
-a{
-
-    width:100%;
-}
-
+.box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
 }

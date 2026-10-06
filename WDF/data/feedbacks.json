@@ -1,0 +1,20 @@
+[
+  {
+    "id": "FB-101",
+    "name": "Yuvraj Parmar",
+    "email": "25dce070@charusat.edu.in",
+    "category": "Portal UI/UX",
+    "rating": 5,
+    "comments": "The dark mode and responsive layout on mobile works smoothly. Great animations!",
+    "timestamp": "2026-10-06 11:20:00"
+  },
+  {
+    "id": "FB-102",
+    "name": "Diya Patel",
+    "email": "diya.patel@charusat.edu.in",
+    "category": "Course Material",
+    "rating": 5,
+    "comments": "The event filtering and timetable view makes staying updated much easier.",
+    "timestamp": "2026-10-06 11:35:10"
+  }
+]

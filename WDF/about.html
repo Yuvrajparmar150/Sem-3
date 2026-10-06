@@ -1,180 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Student Hub</title>
-
-    <link rel="stylesheet" href="class.css">
-
-    <style>
-
-        body{
-            background:linear-gradient(135deg,#0f4c81,#4fa3d1);
-            font-family:Arial, Helvetica, sans-serif;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            min-height:100vh;
-            margin:0;
-        }
-
-        .container{
-
-            width:500px;
-            max-width:90%;
-            background:white;
-            padding:35px;
-            border-radius:15px;
-            box-shadow:0 15px 35px rgba(0,0,0,.25);
-
-        }
-
-        h1{
-
-            color:#0f4c81;
-            text-align:center;
-            margin-bottom:20px;
-
-        }
-
-        p{
-
-            text-align:center;
-            line-height:1.7;
-            margin-bottom:25px;
-
-        }
-
-        h3{
-
-            color:#0f4c81;
-            margin-bottom:20px;
-
-        }
-
-        label{
-
-            display:block;
-            margin-bottom:8px;
-            font-weight:bold;
-
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea{
-
-            width:100%;
-            padding:12px;
-            border:1px solid #ccc;
-            border-radius:8px;
-            margin-bottom:20px;
-            font-size:15px;
-            box-sizing:border-box;
-            transition:.3s;
-
-        }
-
-        input:focus,
-        textarea:focus{
-
-            outline:none;
-            border-color:#0f4c81;
-            box-shadow:0 0 8px rgba(15,76,129,.25);
-
-        }
-
-        textarea{
-
-            resize:vertical;
-
-        }
-
-        input[type="submit"]{
-
-            width:100%;
-            padding:12px;
-            background:#0f4c81;
-            color:white;
-            border:none;
-            border-radius:8px;
-            cursor:pointer;
-            font-size:16px;
-            font-weight:bold;
-            transition:.3s;
-
-        }
-
-        input[type="submit"]:hover{
-
-            background:#1565c0;
-
-        }
-
-        .back{
-
-            text-align:center;
-            margin-top:25px;
-
-        }
-
-        .back a{
-
-            text-decoration:none;
-            color:#0f4c81;
-            font-weight:bold;
-
-        }
-
-        .back a:hover{
-
-            text-decoration:underline;
-
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About StudentHub - Faculty of Technology & Engineering, CHARUSAT. Modern Academic Portal project for ITUE203 Web Development Frameworks.">
+  <title>About Us | StudentHub</title>
+  
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="container">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+        <span class="badge-tag">About</span>
+      </a>
 
-    <h1>About Us</h1>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="register.html" class="nav-link">Register</a></li>
+          <li class="nav-item"><a href="faq.html" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
 
-    <p>
-        <b>
-            This website is designed to provide a simple interface for managing
-            assignments and settings.
-        </b>
-    </p>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+        <a href="login.html" class="btn btn-outline-primary btn-sm">Login</a>
+        <button class="hamburger-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
 
-    <h3>Contact Us</h3>
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo"><span class="logo-icon">🎓</span><span>StudentHub</span></div>
+      <button class="mobile-nav-close btn btn-outline btn-sm">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+      <li><a href="events.html" class="nav-link">🎟️ Events</a></li>
+      <li><a href="register.html" class="nav-link">📝 Register</a></li>
+      <li><a href="about.html" class="nav-link active">ℹ️ About</a></li>
+      <li><a href="contact.html" class="nav-link">✉️ Contact</a></li>
+      <li><a href="faq.html" class="nav-link">❓ FAQs</a></li>
+    </ul>
+  </aside>
 
-    <form action="contact_us.php" method="post">
-
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message</label>
-
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <input type="submit" value="Submit">
-
-    </form>
-
-    <div class="back">
-
-        <a href="index.html">← Back to Login</a>
-
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">About StudentHub & FTE CHARUSAT</span>
     </div>
 
-</div>
+    <!-- Hero Card -->
+    <div class="card" style="margin-bottom: 2.5rem; background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(6,182,212,0.08));">
+      <span class="badge badge-primary" style="margin-bottom: 0.5rem;">Academic Project Initiative</span>
+      <h1>Empowering Next-Generation Engineers</h1>
+      <p style="font-size: 1.1rem; line-height: 1.7;">
+        StudentHub is the official semester-long full-stack web project developed for the subject <strong>Web Development Frameworks (ITUE203)</strong> in the Faculty of Technology & Engineering (FTE) at <strong>Charotar University of Science and Technology (CHARUSAT)</strong>.
+      </p>
+    </div>
 
+    <!-- Vision & Mission Grid -->
+    <section class="grid-2" style="margin-bottom: 3rem;">
+      <div class="card">
+        <div class="card-header">
+          <div class="stat-icon blue">🎯</div>
+          <h3>Our Vision</h3>
+        </div>
+        <p>To provide undergraduate engineering students with an intuitive, unified, and real-time digital gateway for academic monitoring, event registration, assignment management, and secure communication.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="stat-icon green">⚡</div>
+          <h3>Core Objectives</h3>
+        </div>
+        <p>Demonstrate mastery across modern frontend engineering (Semantic HTML5, CSS Grid/Flexbox, DOM Interactivity, Canvas CAPTCHA) and secure backend architecture (PHP POST processing, sanitization, CSV/JSON file locking).</p>
+      </div>
+    </section>
+
+    <!-- Project Developer Card -->
+    <section class="card" style="margin-bottom: 3rem; background: var(--bg-surface);">
+      <div class="card-header">
+        <h3>Project Developer & Maintainer</h3>
+        <span class="badge badge-success">3rd Sem B.Tech CE</span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+        <div class="student-avatar" style="width: 100px; height: 100px; margin: 0;">
+          <img src="https://api.dicebear.com/7.x/bottts/svg?seed=YuvrajParmar" alt="Yuvraj Parmar">
+        </div>
+        <div>
+          <h3 style="margin-bottom: 0.25rem;">Yuvraj Parmar</h3>
+          <div style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Enrollment No: 25DCE070</div>
+          <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">
+            Department of Computer Engineering, Faculty of Technology & Engineering (FTE)<br>
+            Charotar University of Science and Technology (CHARUSAT), Changa - 388421
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="skill-chip">Frontend Developer</span>
+            <span class="skill-chip">UI/UX Designer</span>
+            <span class="skill-chip">PHP & JSON Backend</span>
+            <span class="skill-chip">ITUE203 Coursework</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practical Milestones Summary Table -->
+    <section class="card">
+      <div class="card-header">
+        <h3>Practicals Implemented (1 to 7)</h3>
+        <span class="badge badge-primary">Curriculum Roadmap</span>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Practical</th>
+              <th>Core Concept</th>
+              <th>Key Implementation in Portal</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Practical 1</strong></td>
+              <td>Requirement Analysis, Sitemap & Wireframes</td>
+              <td>Problem scope, user roles, 10+ page sitemap, README.md, GitHub setup.</td>
+              <td><span class="badge badge-success">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Practical 2</strong></td>
+              <td>Semantic HTML5 & Accessibility</td>
+              <td>Header, nav, main, section, article, skip-links, ARIA, and breadcrumbs.</td>
+              <td><span class="badge badge-success">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Practical 3</strong></td>
+              <td>CSS Grid, Flexbox & Responsive UI</td>
+              <td>Mobile-first responsive layouts, tokens, cards, and typography.</td>
+              <td><span class="badge badge-success">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Practical 4</strong></td>
+              <td>DOM Manipulation & Interactivity</td>
+              <td>Light/Dark theme switcher, hero slider, FAQ accordion, modals, and toasts.</td>
+              <td><span class="badge badge-success">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Practical 5</strong></td>
+              <td>Frontend Validation & Error Handling</td>
+              <td>Regex validation, password strength meter, HTML5 Canvas CAPTCHA.</td>
+              <td><span class="badge badge-success">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Practical 6</strong></td>
+              <td>JSON Fetch API, Search, Filter & Sort</td>
+              <td>Dynamic <code>events.json</code> & <code>students.json</code> rendering with pagination.</td>
+              <td><span class="badge badge-success">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Practical 7</strong></td>
+              <td>PHP Processing & CSV/JSON File Storage</td>
+              <td>POST sanitization, server validation, safe file locking, and admin viewer.</td>
+              <td><span class="badge badge-success">Completed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 StudentHub - CHARUSAT FTE.</p>
+      <span class="developer-tag">Yuvraj Parmar (25DCE070)</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

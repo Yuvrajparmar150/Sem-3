@@ -1,115 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Settings | Student Hub</title>
-
-<link rel="stylesheet" href="class.css">
-
-<style>
-
-body{
-display:block;
-background:#eef3f8;
-}
-
-.navbar{
-background:#0f4c81;
-padding:18px;
-text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,.2);
-}
-
-.navbar a{
-margin:8px;
-}
-
-.container2{
-
-width:90%;
-max-width:700px;
-margin:40px auto;
-background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-
-}
-
-.option{
-
-padding:20px;
-margin:20px 0;
-background:#f5f8fc;
-border-left:5px solid #0f4c81;
-border-radius:10px;
-
-}
-
-.option h3{
-
-margin-bottom:10px;
-color:#0f4c81;
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Account Settings - StudentHub: Personalize portal preferences, dark/light themes, notifications, and passwords.">
+  <title>Account Settings | StudentHub</title>
+  
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="navbar">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+        <span class="badge-tag">Settings</span>
+      </a>
 
-<a href="dashboard.html">Dashboard</a>
-<a href="profile.html">Profile</a>
-<a href="attendance.html">Attendance</a>
-<a href="assignments.html">Assignments</a>
-<a href="results.html">Results</a>
-<a href="timetable.html">Timetable</a>
-<a href="settings.html">Settings</a>
-<a href="about.html">About</a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+          <li class="nav-item"><a href="timetable.html" class="nav-link">Timetable</a></li>
+          <li class="nav-item"><a href="settings.html" class="nav-link active">Settings</a></li>
+        </ul>
+      </nav>
 
-</div>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+        <a href="index.html" class="btn btn-outline btn-sm">Log Out</a>
+        <button class="hamburger-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
 
-<div class="container2">
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo"><span class="logo-icon">🎓</span><span>StudentHub</span></div>
+      <button class="mobile-nav-close btn btn-outline btn-sm">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+      <li><a href="settings.html" class="nav-link active">⚙️ Settings</a></li>
+      <li><a href="profile.html" class="nav-link">👤 Profile</a></li>
+      <li><a href="attendance.html" class="nav-link">📈 Attendance</a></li>
+      <li><a href="assignments.html" class="nav-link">📑 Assignments</a></li>
+      <li><a href="results.html" class="nav-link">🏆 Results</a></li>
+      <li><a href="timetable.html" class="nav-link">🕒 Timetable</a></li>
+      <li><a href="events.html" class="nav-link">🎟️ Events</a></li>
+    </ul>
+  </aside>
 
-<h1>Settings</h1>
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="dashboard.html">Dashboard</a>
+      <span class="separator">/</span>
+      <span class="current">Account Settings</span>
+    </div>
 
-<div class="option">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(6,182,212,0.08));">
+        <span class="badge badge-primary" style="margin-bottom: 0.4rem;">User Customization</span>
+        <h1>Account & Portal Settings</h1>
+        <p style="margin-bottom: 0;">Configure your visual appearance, notifications, security credentials, and data privacy options.</p>
+      </div>
 
-<h3>Change Password</h3>
+      <!-- Settings List -->
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        
+        <!-- Theme & Appearance -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>🎨 Theme & Display Appearance</h3>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0;">Toggle between high-contrast light and sleek dark mode</p>
+            </div>
+            <button class="theme-toggle-btn" style="width: 44px; height: 44px; font-size: 1.3rem;">🌙</button>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+            Preferences are automatically saved in <code>localStorage</code> and remembered across all sessions.
+          </p>
+        </div>
 
-<p>Update your Student Hub password.</p>
+        <!-- Security & Password -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>🔒 Password & Authentication Security</h3>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0;">Update your student portal login password</p>
+            </div>
+            <button class="btn btn-outline-primary btn-sm" data-modal-target="changePasswordModal">Update Password</button>
+          </div>
+          <div style="font-size: 0.9rem; color: var(--text-secondary);">
+            Last password change: <strong>14 days ago</strong> &bull; Two-Factor Status: <span class="badge badge-success">Email Verified</span>
+          </div>
+        </div>
 
-</div>
+        <!-- Notification Preferences -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>🔔 Notification Preferences</h3>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0;">Choose how you receive academic and campus event alerts</p>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <label class="checkbox-group" style="justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem;">
+              <span><strong>Assignment Due Date Reminders</strong> (Email & Portal Toast)</span>
+              <input type="checkbox" checked onchange="showToast('Preference Saved', 'Assignment alert preference updated', 'info')">
+            </label>
+            <label class="checkbox-group" style="justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem;">
+              <span><strong>Campus Hackathon & Event Announcements</strong></span>
+              <input type="checkbox" checked onchange="showToast('Preference Saved', 'Event notification preference updated', 'info')">
+            </label>
+            <label class="checkbox-group" style="justify-content: space-between;">
+              <span><strong>Examination Results & Circular Updates</strong></span>
+              <input type="checkbox" checked onchange="showToast('Preference Saved', 'Exam notification preference updated', 'info')">
+            </label>
+          </div>
+        </div>
 
-<div class="option">
+        <!-- Storage & Data (Practical 7) -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>💾 Local & Server Storage Management</h3>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0;">Manage cached JSON responses and local registration records</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-outline-primary btn-sm" onclick="localStorage.removeItem('studenthub_events_cache'); showToast('Cache Cleared', 'Events JSON cache refreshed from server.', 'success');">
+              🔄 Clear JSON Cache
+            </button>
+            <button class="btn btn-outline btn-sm" onclick="exportTableToCSV('my_student_data.csv')">
+              📥 Export My Data (CSV)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-<h3>Notification Preferences</h3>
+  <!-- Change Password Modal -->
+  <div id="changePasswordModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Change Account Password</h3>
+        <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Current Password</label>
+          <input type="password" class="form-control" placeholder="••••••••">
+        </div>
+        <div class="form-group">
+          <label class="form-label">New Password</label>
+          <input type="password" class="form-control" placeholder="••••••••">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Confirm New Password</label>
+          <input type="password" class="form-control" placeholder="••••••••">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" data-modal-close>Cancel</button>
+        <button class="btn btn-primary" onclick="showToast('Password Updated 🔒', 'Your password has been changed successfully.', 'success'); closeModal('changePasswordModal');">Update Password</button>
+      </div>
+    </div>
+  </div>
 
-<p>Receive assignment and exam notifications.</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 StudentHub - CHARUSAT FTE.</p>
+      <span class="developer-tag">Yuvraj Parmar (25DCE070)</span>
+    </div>
+  </footer>
 
-</div>
-
-<div class="option">
-
-<h3>Account Security</h3>
-
-<p>Keep your account secure by updating login details regularly.</p>
-
-</div>
-
-<br>
-
-<a href="dashboard.html">Back to Dashboard</a>
-
-</div>
-
+  <script src="js/main.js"></script>
 </body>
-
 </html>

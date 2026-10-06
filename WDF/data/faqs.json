@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "category": "Academic",
+    "question": "What is the minimum attendance required to appear for semester end examinations?",
+    "answer": "As per university academic regulations, a minimum of 80% attendance in each registered subject (theory and laboratory combined) is mandatory to be eligible for end-semester examinations."
+  },
+  {
+    "id": 2,
+    "category": "Academic",
+    "question": "How are SGPA and CGPA calculated in the credit system?",
+    "answer": "SGPA (Semester Grade Point Average) is calculated by dividing the sum of credits multiplied by grade points earned by total registered credits in that semester. CGPA is the cumulative weighted average across all completed semesters."
+  },
+  {
+    "id": 3,
+    "category": "Admissions",
+    "question": "How can I update my branch or electives for the upcoming semester?",
+    "answer": "Elective selection windows open two weeks prior to the semester start via the Student Hub portal under the 'Courses' module. Branch change applications are processed after 1st year results based on merit."
+  },
+  {
+    "id": 4,
+    "category": "Admissions",
+    "question": "Where can I download my official bonafide certificate and fee receipts?",
+    "answer": "Students can generate digitally signed bonafide certificates and download fee payment receipts instantly from the Student Hub Dashboard under the 'Documents' tab."
+  },
+  {
+    "id": 5,
+    "category": "Examination",
+    "question": "What is the procedure for re-assessment or re-checking of answer sheets?",
+    "answer": "Re-assessment applications must be submitted online within 7 days of result declaration via the 'Results' section in Student Hub upon paying the nominal scrutiny fee."
+  },
+  {
+    "id": 6,
+    "category": "Examination",
+    "question": "Where can I access past year question papers and model answer keys?",
+    "answer": "The digital library repository inside Student Hub contains categorized previous year question papers spanning the last 5 academic years for all engineering departments."
+  },
+  {
+    "id": 7,
+    "category": "Technical",
+    "question": "How do I reset my Student Hub password if I forget it?",
+    "answer": "Click on 'Forgot Password' on the Login page, enter your registered CHARUSAT student email ID, and follow the password reset link sent to your inbox."
+  },
+  {
+    "id": 8,
+    "category": "Technical",
+    "question": "Is Student Hub accessible on mobile devices and tablets?",
+    "answer": "Yes! Student Hub is designed with responsive CSS Grid and Flexbox layouts, providing an optimized touch-friendly experience on all smartphones, tablets, and desktop browsers."
+  },
+  {
+    "id": 9,
+    "category": "Hostel",
+    "question": "What are the campus hostel timings and gate closing rules?",
+    "answer": "Campus hostel gates close at 09:30 PM on weekdays and 10:00 PM on weekends. Late entry requires prior approval from the Chief Warden submitted via the Student Hub portal."
+  },
+  {
+    "id": 10,
+    "category": "Hostel",
+    "question": "How can I apply for a hostel room change or maintenance request?",
+    "answer": "Hostel maintenance complaints (electrical, plumbing, Wi-Fi) can be lodged 24/7 in the 'Hostel Services' section with an average turnaround time of 4 hours."
+  },
+  {
+    "id": 11,
+    "category": "Library",
+    "question": "How many books can an undergraduate student borrow at a time?",
+    "answer": "Undergraduate students can issue up to 4 books simultaneously for a duration of 14 days, with renewable options via the web portal if no reservation queue exists."
+  },
+  {
+    "id": 12,
+    "category": "Library",
+    "question": "How do I access IEEE Xplore, ScienceDirect, and ACM Digital Library?",
+    "answer": "All university enrolled students have remote proxy access to IEEE, Springer, and ACM digital journals using their institutional student email credentials."
+  },
+  {
+    "id": 13,
+    "category": "Academic",
+    "question": "What is the penalty for late submission of laboratory assignments?",
+    "answer": "Assignments submitted after the due date incur a 10% deduction per day unless supported by a valid medical certificate or prior approval from the course faculty."
+  },
+  {
+    "id": 14,
+    "category": "Technical",
+    "question": "How do I enable Dark Mode on Student Hub?",
+    "answer": "Click the Theme toggle button (Sun/Moon icon) in the top navigation bar. Your theme preference is saved automatically in localStorage for future visits."
+  },
+  {
+    "id": 15,
+    "category": "Examination",
+    "question": "When are mid-semester examinations conducted?",
+    "answer": "Mid-semester internal assessments are scheduled between the 7th and 9th week of each academic term as per the University Academic Calendar."
+  },
+  {
+    "id": 16,
+    "category": "Admissions",
+    "question": "How can I participate in international exchange and research internships?",
+    "answer": "The International Relations and Internship Cell posts verified semester-abroad and Summer Research Fellowships every semester on the Student Hub notice board."
+  }
+]

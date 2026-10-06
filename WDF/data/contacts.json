@@ -1,0 +1,18 @@
+[
+  {
+    "id": "MSG-501",
+    "name": "Kavita Rao",
+    "email": "kavita.rao@example.com",
+    "subject": "Inquiry regarding Campus Hackathon",
+    "message": "Hello, is team registration open for 1st year students as well? Please clarify.",
+    "timestamp": "2026-10-06 09:30:20"
+  },
+  {
+    "id": "MSG-502",
+    "name": "Prof. T. G. Trivedi",
+    "email": "tgtrivedi@charusat.edu.in",
+    "subject": "IoT Lab Component Request",
+    "message": "We have received the new batch of ESP32 and sensor modules for Practical 6.",
+    "timestamp": "2026-10-06 10:45:10"
+  }
+]

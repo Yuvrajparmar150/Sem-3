@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Registration Open: TechGenesis 2026 Hackathon",
+    "department": "Computer Engineering",
+    "date": "2026-10-06",
+    "priority": "Urgent",
+    "category": "Events",
+    "summary": "Team registrations for national hackathon are now open. Last date for abstract submission is Oct 12, 2026."
+  },
+  {
+    "id": 2,
+    "title": "Semester-3 Mid-Term Examination Schedule Released",
+    "department": "Examination Cell",
+    "date": "2026-10-04",
+    "priority": "High",
+    "category": "Academic",
+    "summary": "Mid-term theory and lab examination timetable has been published. Check Timetable & Results section."
+  },
+  {
+    "id": 3,
+    "title": "Web Development Frameworks Lab Assignment 2 Due Date",
+    "department": "IT & CE Dept",
+    "date": "2026-10-02",
+    "priority": "Normal",
+    "category": "Assignment",
+    "summary": "Submit Practical 5 & Practical 6 assignments along with code screenshots before Friday 5:00 PM."
+  },
+  {
+    "id": 4,
+    "title": "Campus Placement Drive for 2027 Batch by TCS & Infosys",
+    "department": "T&P Cell",
+    "date": "2026-09-28",
+    "priority": "High",
+    "category": "Placement",
+    "summary": "Eligible 3rd & 4th year students with CGPA > 7.0 must register on the placement portal by Oct 10."
+  },
+  {
+    "id": 5,
+    "title": "Central Library Extended Hours During Exam Season",
+    "department": "Central Library",
+    "date": "2026-09-25",
+    "priority": "Normal",
+    "category": "Facility",
+    "summary": "Library study halls will remain open until 11:00 PM with Wi-Fi and digital access support."
+  },
+  {
+    "id": 6,
+    "title": "Hostel Maintenance & High-Speed Wi-Fi Upgrade Completed",
+    "department": "Campus Admin",
+    "date": "2026-09-20",
+    "priority": "Normal",
+    "category": "Hostel",
+    "summary": "Wi-Fi bandwidth in Boys and Girls Hostels upgraded to 1 Gbps with new mesh access points."
+  }
+]

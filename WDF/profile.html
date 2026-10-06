@@ -1,137 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Profile</title>
-
- <link rel="stylesheet" href="class.css">
-
-<style>
-
-body{
-display:block;
-background:#eef3f8;
-}
-
-.wrapper{
-
-width:90%;
-max-width:800px;
-margin:40px auto;
-
-}
-
-.box{
-
-background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-
-}
-
-.navbar{
-background:#0f4c81;
-padding:18px;
-text-align:center;
-}
-
-.navbar a{
-margin:8px;
-}
-
-table{
-margin-top:25px;
-}
-
-</style> 
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Profile - StudentHub: Personal information, academic metrics, enrolled subjects, and skill proficiencies.">
+  <title>Student Profile | StudentHub</title>
+  
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="navbar">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+        <span class="badge-tag">Profile</span>
+      </a>
 
-<a href="dashboard.html">Dashboard</a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="profile.html" class="nav-link active">Profile</a></li>
+          <li class="nav-item"><a href="attendance.html" class="nav-link">Attendance</a></li>
+          <li class="nav-item"><a href="assignments.html" class="nav-link">Assignments</a></li>
+          <li class="nav-item"><a href="results.html" class="nav-link">Results</a></li>
+          <li class="nav-item"><a href="timetable.html" class="nav-link">Timetable</a></li>
+        </ul>
+      </nav>
 
-<a href="profile.html">Profile</a>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+        <a href="index.html" class="btn btn-outline btn-sm">Log Out</a>
+        <button class="hamburger-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
 
-<a href="attendance.html">Attendance</a>
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo"><span class="logo-icon">🎓</span><span>StudentHub</span></div>
+      <button class="mobile-nav-close btn btn-outline btn-sm">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+      <li><a href="profile.html" class="nav-link active">👤 Profile</a></li>
+      <li><a href="attendance.html" class="nav-link">📈 Attendance</a></li>
+      <li><a href="assignments.html" class="nav-link">📑 Assignments</a></li>
+      <li><a href="results.html" class="nav-link">🏆 Results</a></li>
+      <li><a href="timetable.html" class="nav-link">🕒 Timetable</a></li>
+      <li><a href="events.html" class="nav-link">🎟️ Events</a></li>
+      <li><a href="settings.html" class="nav-link">⚙️ Settings</a></li>
+    </ul>
+  </aside>
 
-<a href="assignments.html">Assignments</a>
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="dashboard.html">Dashboard</a>
+      <span class="separator">/</span>
+      <span class="current">Student Profile</span>
+    </div>
 
-<a href="results.html">Results</a>
+    <div class="grid-3" style="grid-template-columns: 1fr 2fr; align-items: flex-start;">
+      <!-- Profile Summary Card -->
+      <div class="card" style="text-align: center;">
+        <div class="student-avatar" style="width: 110px; height: 110px; margin: 0 auto 1.25rem;">
+          <img src="https://api.dicebear.com/7.x/bottts/svg?seed=YuvrajParmar" alt="Yuvraj Parmar">
+        </div>
+        <h2>Yuvraj Parmar</h2>
+        <div class="student-roll" style="margin-bottom: 0.75rem;">Enrollment: 25DCE070</div>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+          B.Tech in Computer Engineering<br>
+          Semester 3 (Odd 2026-27)
+        </p>
 
-<a href="timetable.html">Timetable</a>
+        <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+          <span class="badge badge-success">Verified Student</span>
+          <span class="badge badge-primary">FTE CHARUSAT</span>
+        </div>
 
-<a href="settings.html">Settings</a>
+        <div style="border-top: 1px solid var(--border-light); padding-top: 1.25rem; text-align: left;">
+          <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>📧 Email:</strong> 25dce070@charusat.edu.in</p>
+          <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>📱 Mobile:</strong> +91 98765 43210</p>
+          <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>📍 Campus:</strong> Changa, Gujarat, India</p>
+        </div>
 
-<a href="about.html">About</a>
+        <div style="margin-top: 1.5rem;">
+          <button class="btn btn-primary btn-block" data-modal-target="editBioModal">✏️ Edit Bio & Skills</button>
+        </div>
+      </div>
 
-</div>
+      <!-- Academic & Details Section -->
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        <!-- Academic Summary Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Academic Metrics & Standing</h3>
+            <span class="badge badge-success">Honors Candidate</span>
+          </div>
 
-<div class="wrapper">
+          <div class="grid-3" style="margin-bottom: 1.5rem;">
+            <div class="stat-card" style="padding: 1rem;">
+              <div class="stat-info">
+                <div class="stat-value" style="font-size: 1.5rem; color: var(--primary);">9.42</div>
+                <div class="stat-label">Cumulative CGPA</div>
+              </div>
+            </div>
+            <div class="stat-card" style="padding: 1rem;">
+              <div class="stat-info">
+                <div class="stat-value" style="font-size: 1.5rem; color: var(--success);">91.6%</div>
+                <div class="stat-label">Attendance Rate</div>
+              </div>
+            </div>
+            <div class="stat-card" style="padding: 1rem;">
+              <div class="stat-info">
+                <div class="stat-value" style="font-size: 1.5rem; color: var(--accent);">44 / 44</div>
+                <div class="stat-label">Credits Earned</div>
+              </div>
+            </div>
+          </div>
 
-<div class="box">
+          <!-- Academic Bio Details Table -->
+          <div class="table-responsive">
+            <table class="data-table">
+              <tbody>
+                <tr>
+                  <th style="width: 35%;">Full Name</th>
+                  <td><strong>Yuvraj Parmar</strong></td>
+                </tr>
+                <tr>
+                  <th>Enrollment Number</th>
+                  <td><code>25DCE070</code></td>
+                </tr>
+                <tr>
+                  <th>Degree & Department</th>
+                  <td>B.Tech Computer Engineering (CE)</td>
+                </tr>
+                <tr>
+                  <th>Faculty & Institution</th>
+                  <td>Faculty of Technology & Engineering (FTE), CHARUSAT</td>
+                </tr>
+                <tr>
+                  <th>Current Semester</th>
+                  <td>3rd Semester (Odd Term 2026-27)</td>
+                </tr>
+                <tr>
+                  <th>Subject Focus</th>
+                  <td>Web Development Frameworks (ITUE203), Data Structures, C++, Digital Electronics</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-<h1>Student Profile</h1>
+        <!-- Technical Skills Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Technical Skills & Frameworks</h3>
+            <span class="badge badge-primary">Practical Competencies</span>
+          </div>
+          <div class="student-skills" style="justify-content: flex-start; gap: 8px;">
+            <span class="skill-chip" style="font-size: 0.9rem; padding: 6px 14px; background: var(--primary-subtle); color: var(--primary); font-weight: 600;">HTML5 (Semantic)</span>
+            <span class="skill-chip" style="font-size: 0.9rem; padding: 6px 14px; background: var(--primary-subtle); color: var(--primary); font-weight: 600;">CSS3 (Grid & Flexbox)</span>
+            <span class="skill-chip" style="font-size: 0.9rem; padding: 6px 14px; background: var(--primary-subtle); color: var(--primary); font-weight: 600;">JavaScript (ES6+)</span>
+            <span class="skill-chip" style="font-size: 0.9rem; padding: 6px 14px; background: var(--primary-subtle); color: var(--primary); font-weight: 600;">PHP Backend & Form Processing</span>
+            <span class="skill-chip" style="font-size: 0.9rem; padding: 6px 14px; background: var(--primary-subtle); color: var(--primary); font-weight: 600;">JSON & Fetch API</span>
+            <span class="skill-chip" style="font-size: 0.9rem; padding: 6px 14px; background: var(--primary-subtle); color: var(--primary); font-weight: 600;">HTML5 Canvas CAPTCHA</span>
+            <span class="skill-chip" style="font-size: 0.9rem; padding: 6px 14px; background: var(--primary-subtle); color: var(--primary); font-weight: 600;">C++ Object Oriented Programming</span>
+            <span class="skill-chip" style="font-size: 0.9rem; padding: 6px 14px; background: var(--primary-subtle); color: var(--primary); font-weight: 600;">Git & GitHub Workflow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-<table>
+  <!-- Edit Bio Modal -->
+  <div id="editBioModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Edit Profile Information</h3>
+        <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" value="+91 98765 43210">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Personal Bio</label>
+          <textarea class="form-control" rows="3">Passionate Computer Engineering student focused on modern full-stack web applications, secure APIs, and responsive design systems.</textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" data-modal-close>Cancel</button>
+        <button class="btn btn-primary" onclick="showToast('Profile Saved', 'Profile bio updated successfully!', 'success'); closeModal('editBioModal');">Save Changes</button>
+      </div>
+    </div>
+  </div>
 
-<tr>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 StudentHub. ITUE203 Semester 3.</p>
+      <span class="developer-tag">Yuvraj Parmar (25DCE070)</span>
+    </div>
+  </footer>
 
-<th>Name</th>
-
-<td>Yuvraj Parmar</td>
-
-</tr>
-
-<tr>
-
-<th>Student ID</th>
-
-<td>25DCE070</td>
-
-</tr>
-
-<tr>
-
-<th>Department</th>
-
-<td>Computer Engineering</td>
-
-</tr>
-
-<tr>
-
-<th>Email</th>
-
-<td>25dce070@charusat.edu.in</td>
-
-</tr>
-
-<tr>
-
-<th>Semester</th>
-
-<td>3</td>
-
-</tr>
-
-</table>
-
-<br>
-
-<a href="dashboard.html">Back to Dashboard</a>
-
-</div>
-
-</div>
-
+  <script src="js/main.js"></script>
 </body>
-
 </html>

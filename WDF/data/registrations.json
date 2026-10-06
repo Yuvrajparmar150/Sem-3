@@ -1,0 +1,47 @@
+[
+  {
+    "id": "REG-1001",
+    "name": "Yuvraj Parmar",
+    "studentId": "25DCE070",
+    "email": "25dce070@charusat.edu.in",
+    "mobile": "9876543210",
+    "course": "Computer Engineering",
+    "year": "2nd Year",
+    "gender": "Male",
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Anand",
+    "registeredAt": "2026-10-06 10:15:30",
+    "status": "Verified"
+  },
+  {
+    "id": "REG-1002",
+    "name": "Aarav Sharma",
+    "studentId": "25DCE012",
+    "email": "aarav.sharma@charusat.edu.in",
+    "mobile": "9823456789",
+    "course": "Computer Engineering",
+    "year": "2nd Year",
+    "gender": "Male",
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Ahmedabad",
+    "registeredAt": "2026-10-06 10:30:15",
+    "status": "Verified"
+  },
+  {
+    "id": "REG-1003",
+    "name": "Diya Patel",
+    "studentId": "25DIT045",
+    "email": "diya.patel@charusat.edu.in",
+    "mobile": "9912345678",
+    "course": "Information Technology",
+    "year": "2nd Year",
+    "gender": "Female",
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Vadodara",
+    "registeredAt": "2026-10-06 11:05:40",
+    "status": "Verified"
+  }
+]

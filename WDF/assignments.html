@@ -1,110 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Assignments | Student Hub</title>
-
-<link rel="stylesheet" href="class.css">
-
-<style>
-
-body{
-display:block;
-background:#eef3f8;
-}
-
-.navbar{
-background:#0f4c81;
-padding:18px;
-text-align:center;
-}
-
-.navbar a{
-margin:8px;
-}
-
-.container2{
-width:90%;
-max-width:900px;
-margin:40px auto;
-background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Assignments & Lab Submissions - StudentHub: Track pending coursework, upload lab files, and inspect grading.">
+  <title>Assignments | StudentHub</title>
+  
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="navbar">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+        <span class="badge-tag">Assignments</span>
+      </a>
 
-<a href="dashboard.html">Dashboard</a>
-<a href="profile.html">Profile</a>
-<a href="attendance.html">Attendance</a>
-<a href="assignments.html">Assignments</a>
-<a href="results.html">Results</a>
-<a href="timetable.html">Timetable</a>
-<a href="settings.html">Settings</a>
-<a href="about.html">About</a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="attendance.html" class="nav-link">Attendance</a></li>
+          <li class="nav-item"><a href="assignments.html" class="nav-link active">Assignments</a></li>
+          <li class="nav-item"><a href="results.html" class="nav-link">Results</a></li>
+          <li class="nav-item"><a href="timetable.html" class="nav-link">Timetable</a></li>
+        </ul>
+      </nav>
 
-</div>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+        <a href="index.html" class="btn btn-outline btn-sm">Log Out</a>
+        <button class="hamburger-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
 
-<div class="container2">
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo"><span class="logo-icon">🎓</span><span>StudentHub</span></div>
+      <button class="mobile-nav-close btn btn-outline btn-sm">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+      <li><a href="assignments.html" class="nav-link active">📑 Assignments</a></li>
+      <li><a href="attendance.html" class="nav-link">📈 Attendance</a></li>
+      <li><a href="results.html" class="nav-link">🏆 Results</a></li>
+      <li><a href="timetable.html" class="nav-link">🕒 Timetable</a></li>
+      <li><a href="profile.html" class="nav-link">👤 Profile</a></li>
+    </ul>
+  </aside>
 
-<h1>Assignments</h1>
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="dashboard.html">Dashboard</a>
+      <span class="separator">/</span>
+      <span class="current">Assignments & Lab Work</span>
+    </div>
 
-<table>
+    <!-- Header Banner -->
+    <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(6,182,212,0.08));">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge badge-warning" style="margin-bottom: 0.4rem;">2 Upcoming Deadlines</span>
+          <h1>Academic Assignments & Lab Reports</h1>
+          <p style="margin-bottom: 0;">Submit code repositories, PDF lab files, and review evaluated practical scores.</p>
+        </div>
+        <button class="btn btn-primary" data-modal-target="uploadAssignmentModal">📤 Upload Lab Report</button>
+      </div>
+    </div>
 
-<tr>
-<th>Subject</th>
-<th>Assignment</th>
-<th>Due Date</th>
-<th>Status</th>
-</tr>
+    <!-- Assignments Table Card -->
+    <section class="card">
+      <div class="card-header">
+        <h3>Current Semester Practical Assignments</h3>
+        <span class="badge badge-primary">Term: Odd 2026-27</span>
+      </div>
 
-<tr>
-<td>C++</td>
-<td>OOP Concepts</td>
-<td>10 Aug 2026</td>
-<td>Pending</td>
-</tr>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Assignment Title</th>
+              <th>Due Date</th>
+              <th>Max Marks</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ITUE203</code> (WDF)</td>
+              <td><strong>Practical 1-4: Semantic HTML5, CSS Grid & DOM</strong></td>
+              <td>02 Oct 2026</td>
+              <td>25</td>
+              <td><span class="badge badge-success">Evaluated (24/25)</span></td>
+              <td><button class="btn btn-outline btn-sm" onclick="showToast('Evaluated', 'Score: 24/25. Excellent responsive layout!', 'info')">View Review</button></td>
+            </tr>
+            <tr>
+              <td><code>ITUE203</code> (WDF)</td>
+              <td><strong>Practical 5 & 6: Form Validation & JSON Fetch API</strong></td>
+              <td>08 Oct 2026</td>
+              <td>25</td>
+              <td><span class="badge badge-warning">Pending Upload</span></td>
+              <td><button class="btn btn-primary btn-sm" data-modal-target="uploadAssignmentModal">Submit</button></td>
+            </tr>
+            <tr>
+              <td><code>ITUE203</code> (WDF)</td>
+              <td><strong>Practical 7: PHP Form Processing & File Storage</strong></td>
+              <td>12 Oct 2026</td>
+              <td>25</td>
+              <td><span class="badge badge-warning">In Progress</span></td>
+              <td><button class="btn btn-primary btn-sm" data-modal-target="uploadAssignmentModal">Submit</button></td>
+            </tr>
+            <tr>
+              <td><code>CEUE201</code> (C++)</td>
+              <td><strong>OOP Concept: Polymorphism & Templates</strong></td>
+              <td>15 Oct 2026</td>
+              <td>20</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+              <td><button class="btn btn-primary btn-sm" data-modal-target="uploadAssignmentModal">Submit</button></td>
+            </tr>
+            <tr>
+              <td><code>MAUE204</code> (Maths)</td>
+              <td><strong>Matrix Operations & Graph Theory Problem Set</strong></td>
+              <td>20 Oct 2026</td>
+              <td>30</td>
+              <td><span class="badge badge-success">Submitted</span></td>
+              <td><button class="btn btn-outline btn-sm" onclick="showToast('Status', 'Awaiting faculty evaluation', 'info')">Details</button></td>
+            </tr>
+            <tr>
+              <td><code>ECUE202</code> (DE)</td>
+              <td><strong>Synchronous Up/Down Counter Design Lab</strong></td>
+              <td>24 Oct 2026</td>
+              <td>20</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+              <td><button class="btn btn-primary btn-sm" data-modal-target="uploadAssignmentModal">Submit</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 
-<tr>
-<td>Mathematics</td>
-<td>Matrix Problems</td>
-<td>12 Aug 2026</td>
-<td>Submitted</td>
-</tr>
+  <!-- Upload Modal -->
+  <div id="uploadAssignmentModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Upload Practical Submission</h3>
+        <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <select class="form-control">
+            <option>ITUE203 - Web Development Frameworks (Practical 1-7)</option>
+            <option>CEUE201 - Object Oriented Programming (C++)</option>
+            <option>MAUE204 - Discrete Mathematics</option>
+            <option>ECUE202 - Digital Electronics</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">GitHub Repository / Source Code URL</label>
+          <input type="url" class="form-control" placeholder="https://github.com/Yuvrajparmar150/Sem-3">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Attach PDF Report / Zip File</label>
+          <input type="file" class="form-control" accept=".pdf,.zip,.rar">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Submission Remarks / Notes</label>
+          <textarea class="form-control" rows="2" placeholder="e.g. Completed Practicals 1 to 7 with full validation, Canvas CAPTCHA, and PHP CSV/JSON storage."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" data-modal-close>Cancel</button>
+        <button class="btn btn-primary" onclick="showToast('Upload Successful 🎉', 'Your assignment has been submitted to the course instructor.', 'success'); closeModal('uploadAssignmentModal');">Confirm Submission</button>
+      </div>
+    </div>
+  </div>
 
-<tr>
-<td>Digital Electronics</td>
-<td>Flip-Flop Design</td>
-<td>15 Aug 2026</td>
-<td>Pending</td>
-</tr>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 StudentHub - CHARUSAT FTE.</p>
+      <span class="developer-tag">Yuvraj Parmar (25DCE070)</span>
+    </div>
+  </footer>
 
-<tr>
-<td>Communication Skills</td>
-<td>Presentation</td>
-<td>18 Aug 2026</td>
-<td>Pending</td>
-</tr>
-
-</table>
-
-<br>
-
-<a href="dashboard.html">Back to Dashboard</a>
-
-</div>
-
+  <script src="js/main.js"></script>
 </body>
-
 </html>

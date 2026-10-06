@@ -1,59 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Student Hub</title>
-
-<link rel="stylesheet" href="class.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudentHub - The unified academic, events, registration and student management portal for CHARUSAT FTE.">
+  <title>StudentHub | Academic & Campus Portal</title>
+  
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <!-- Skip Link for Keyboard Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="container">
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+        <span class="badge-tag">Sem-3 WDF</span>
+      </a>
 
-<h1>Student Hub</h1>
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="register.html" class="nav-link">Register</a></li>
+          <li class="nav-item"><a href="timetable.html" class="nav-link">Timetable</a></li>
+          <li class="nav-item"><a href="faq.html" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
 
-<p>
-Welcome to the Student Hub!
-<br><br>
-Login using your Student ID and Password.
-</p>
+      <!-- Action Items -->
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">🌙</button>
+        <a href="login.html" class="btn btn-outline-primary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+        <button class="hamburger-btn" aria-label="Open mobile navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
 
-<p>
+  <!-- Mobile Navigation Overlay & Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+      </div>
+      <button class="mobile-nav-close btn btn-outline btn-sm" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="nav-link active">🏠 Home</a></li>
+      <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+      <li><a href="events.html" class="nav-link">🎟️ Campus Events</a></li>
+      <li><a href="register.html" class="nav-link">📝 Student Registration</a></li>
+      <li><a href="profile.html" class="nav-link">👤 Student Profile</a></li>
+      <li><a href="attendance.html" class="nav-link">📈 Attendance</a></li>
+      <li><a href="assignments.html" class="nav-link">📑 Assignments</a></li>
+      <li><a href="results.html" class="nav-link">🏆 Examination Results</a></li>
+      <li><a href="timetable.html" class="nav-link">🕒 Timetable</a></li>
+      <li><a href="faq.html" class="nav-link">❓ Help & FAQs</a></li>
+      <li><a href="about.html" class="nav-link">ℹ️ About Us</a></li>
+      <li><a href="contact.html" class="nav-link">✉️ Contact Us</a></li>
+      <li><a href="admin.html" class="nav-link">⚙️ Admin Submissions</a></li>
+      <li><a href="feedback.html" class="nav-link">⭐ Feedback & Ratings</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+      <a href="login.html" class="btn btn-primary btn-block">Sign In to Portal</a>
+    </div>
+  </aside>
 
-<input type="text" placeholder="Student ID">
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper container">
 
-</p>
+    <!-- Practical 4: Hero Content Carousel / Slider -->
+    <section class="hero-slider-container" aria-label="Featured Highlights Slider">
+      <div class="hero-slides">
+        <!-- Slide 1 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&auto=format&fit=crop&q=80');">
+          <div class="hero-slide-content">
+            <span class="hero-slide-tag">🚀 Welcome to StudentHub 2026</span>
+            <h1>Your All-in-One Campus Academic Gateway</h1>
+            <p>Empowering students of Faculty of Technology & Engineering with streamlined access to grades, attendance, timetable schedules, and hackathons.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="dashboard.html" class="btn btn-primary btn-lg">Open Dashboard</a>
+              <a href="events.html" class="btn btn-outline btn-lg" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">Explore Events</a>
+            </div>
+          </div>
+        </div>
 
-<p>
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&auto=format&fit=crop&q=80');">
+          <div class="hero-slide-content">
+            <span class="hero-slide-tag">🔥 TechGenesis 2026 Hackathon</span>
+            <h1>Annual National Coding Challenge</h1>
+            <p>24 hours of innovation, collaboration, and building solutions in Web3, AI, and Cloud. Cash prizes up to ₹1,50,000.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="events.html" class="btn btn-primary btn-lg">Register for Hackathon</a>
+              <a href="register.html" class="btn btn-outline btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">New Registration</a>
+            </div>
+          </div>
+        </div>
 
-<input type="password" placeholder="Password">
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&auto=format&fit=crop&q=80');">
+          <div class="hero-slide-content">
+            <span class="hero-slide-tag">💡 Web Frameworks Masterclass</span>
+            <h1>Practical 1 to 7 Implementation</h1>
+            <p>Responsive CSS Grid & Flexbox, JavaScript DOM manipulation, HTML5 Canvas CAPTCHA, Fetch API JSON rendering, and PHP CSV/JSON storage.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="admin.html" class="btn btn-primary btn-lg">View Submissions (PHP)</a>
+              <a href="faq.html" class="btn btn-outline btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">Practical FAQs</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-</p>
+      <!-- Slider Controls -->
+      <button class="slider-btn prev" aria-label="Previous Slide">‹</button>
+      <button class="slider-btn next" aria-label="Next Slide">›</button>
+      <div class="slider-indicators"></div>
+    </section>
 
-<h2>
+    <!-- Key Metrics & Interactive Counters -->
+    <section class="grid-4" style="margin-bottom: 3.5rem;" aria-label="Portal Statistics">
+      <div class="stat-card">
+        <div class="stat-icon blue">👨‍🎓</div>
+        <div class="stat-info">
+          <div class="stat-value stat-counter" data-target="2400" data-suffix="+">2,400+</div>
+          <div class="stat-label">Enrolled Students</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">🎟️</div>
+        <div class="stat-info">
+          <div class="stat-value stat-counter" data-target="16" data-suffix="+">16+</div>
+          <div class="stat-label">Active Campus Events</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon amber">📚</div>
+        <div class="stat-info">
+          <div class="stat-value stat-counter" data-target="48" data-suffix="">48</div>
+          <div class="stat-label">Courses & Electives</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon purple">⚡</div>
+        <div class="stat-info">
+          <div class="stat-value stat-counter" data-target="99" data-suffix="%">99%</div>
+          <div class="stat-label">System Uptime</div>
+        </div>
+      </div>
+    </section>
 
-<a href="login.html">
-Login
-</a>
+    <!-- Core Modules Section -->
+    <section style="margin-bottom: 3.5rem;">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 2.5rem;">
+        <span class="badge badge-primary" style="margin-bottom: 0.5rem;">Student Services</span>
+        <h2>Centralized Academic Ecosystem</h2>
+        <p>Access your complete academic lifecycle in one responsive, accessible, and fast web application.</p>
+      </div>
 
-</h2>
+      <div class="grid-3">
+        <!-- Module 1: Dashboard -->
+        <article class="card">
+          <div class="card-header">
+            <div class="stat-icon blue">📊</div>
+            <span class="badge badge-primary">Module 01</span>
+          </div>
+          <div class="card-body">
+            <h3>Student Dashboard</h3>
+            <p>Comprehensive overview of your daily class schedule, attendance statistics, pending lab assignments, and notifications.</p>
+          </div>
+          <div class="card-footer">
+            <a href="dashboard.html" class="btn btn-outline-primary btn-sm btn-block">Launch Dashboard →</a>
+          </div>
+        </article>
 
-<div class="about-link">
+        <!-- Module 2: Registration -->
+        <article class="card">
+          <div class="card-header">
+            <div class="stat-icon green">📝</div>
+            <span class="badge badge-success">Practical 5 & 7</span>
+          </div>
+          <div class="card-body">
+            <h3>Student Registration</h3>
+            <p>Full client-side regex validation, password strength meter, HTML5 Canvas CAPTCHA, dependent dropdowns, and PHP CSV/JSON backend processing.</p>
+          </div>
+          <div class="card-footer">
+            <a href="register.html" class="btn btn-outline-primary btn-sm btn-block">Register Student →</a>
+          </div>
+        </article>
 
-<a href="about.html">
-About Us
-</a>
+        <!-- Module 3: Events Explorer -->
+        <article class="card">
+          <div class="card-header">
+            <div class="stat-icon purple">🎟️</div>
+            <span class="badge badge-primary">Practical 6</span>
+          </div>
+          <div class="card-body">
+            <h3>Dynamic Events Explorer</h3>
+            <p>Consumes external <code>events.json</code> data via Fetch API with live debounced search, category filters, sorting, and client-side pagination.</p>
+          </div>
+          <div class="card-footer">
+            <a href="events.html" class="btn btn-outline-primary btn-sm btn-block">Explore Events →</a>
+          </div>
+        </article>
 
-</div>
+        <!-- Module 4: Attendance -->
+        <article class="card">
+          <div class="card-header">
+            <div class="stat-icon blue">📈</div>
+            <span class="badge badge-primary">Academic</span>
+          </div>
+          <div class="card-body">
+            <h3>Attendance Records</h3>
+            <p>Track subject-wise theory & laboratory attendance percentages with real-time alerts for the 80% university eligibility threshold.</p>
+          </div>
+          <div class="card-footer">
+            <a href="attendance.html" class="btn btn-outline-primary btn-sm btn-block">Check Attendance →</a>
+          </div>
+        </article>
 
-</div>
+        <!-- Module 5: Results & Transcripts -->
+        <article class="card">
+          <div class="card-header">
+            <div class="stat-icon amber">🏆</div>
+            <span class="badge badge-warning">Grades</span>
+          </div>
+          <div class="card-body">
+            <h3>Semester Results</h3>
+            <p>View semester SGPA, cumulative CGPA, course credits, grade points distribution, and official downloadable result sheets.</p>
+          </div>
+          <div class="card-footer">
+            <a href="results.html" class="btn btn-outline-primary btn-sm btn-block">View Results →</a>
+          </div>
+        </article>
 
+        <!-- Module 6: Timetable & Schedule -->
+        <article class="card">
+          <div class="card-header">
+            <div class="stat-icon purple">🕒</div>
+            <span class="badge badge-primary">Schedule</span>
+          </div>
+          <div class="card-body">
+            <h3>Weekly Timetable</h3>
+            <p>Interactive weekly class timetable with classroom numbers, lab allocations, faculty details, and filterable day schedules.</p>
+          </div>
+          <div class="card-footer">
+            <a href="timetable.html" class="btn btn-outline-primary btn-sm btn-block">View Timetable →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Two-Column Section: Live Campus Notices & Quick Practical Overview -->
+    <section class="grid-2" style="margin-bottom: 3.5rem;">
+      <!-- Column 1: Live Campus Notices Widget -->
+      <div class="card">
+        <div class="card-header">
+          <h3>📢 Campus Circulars & Notices</h3>
+          <span class="badge badge-primary">Live Feed</span>
+        </div>
+        <div id="noticesContainer">
+          <!-- Dynamically populated via JSON -->
+        </div>
+      </div>
+
+      <!-- Column 2: Practical 1 to 7 Implementation Summary -->
+      <div class="card">
+        <div class="card-header">
+          <h3>📋 WDF Practical Roadmap (1 to 7)</h3>
+          <span class="badge badge-success">Completed</span>
+        </div>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem;">
+          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <span class="badge badge-success">P1</span>
+            <div><strong>Requirement Analysis & Sitemap</strong>: Structured repository, wireframes, and documentation.</div>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <span class="badge badge-success">P2</span>
+            <div><strong>Semantic HTML5 Pages</strong>: 12+ accessible semantic pages with skip links, ARIA, and breadcrumbs.</div>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <span class="badge badge-success">P3</span>
+            <div><strong>Responsive UI Design</strong>: Mobile-first CSS Grid and Flexbox layouts, modern typography & tokens.</div>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <span class="badge badge-success">P4</span>
+            <div><strong>DOM Manipulation & Interactivity</strong>: Accordion FAQs, modal dialogs, slider, toasts, dark mode.</div>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <span class="badge badge-success">P5</span>
+            <div><strong>Form Validation & CAPTCHA</strong>: Real-time regex validation, password meter, HTML5 Canvas CAPTCHA.</div>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <span class="badge badge-success">P6</span>
+            <div><strong>Fetch API & Dynamic JSON</strong>: Consumes events.json & students.json with search, filter, sort & pagination.</div>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <span class="badge badge-success">P7</span>
+            <div><strong>PHP Form Processing & CSV/JSON Storage</strong>: POST handling, sanitization, server validation & file locks.</div>
+          </li>
+        </ul>
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <a href="admin.html" class="btn btn-primary btn-sm">Explore Admin Submissions Viewer →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Event Details Modal (Practical 4 & 6) -->
+  <div id="eventDetailsModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalEventTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modalEventTitle" class="modal-title">Event Details</h3>
+        <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalEventImg" src="" alt="Event" style="border-radius: var(--radius-md); margin-bottom: 1.25rem; max-height: 220px; width: 100%; object-fit: cover;">
+        <p id="modalEventDesc" style="font-size: 1rem; line-height: 1.6;"></p>
+        <div style="background: var(--bg-muted); padding: 1rem; border-radius: var(--radius-md); margin: 1rem 0;">
+          <p style="margin-bottom: 0.4rem;"><strong>📅 Date & Time:</strong> <span id="modalEventDate"></span></p>
+          <p style="margin-bottom: 0.4rem;"><strong>📍 Venue:</strong> <span id="modalEventVenue"></span></p>
+          <p style="margin-bottom: 0.4rem;"><strong>🎤 Speaker/Lead:</strong> <span id="modalEventSpeaker"></span></p>
+          <p style="margin-bottom: 0;"><strong>🎟️ Seat Availability:</strong> <span id="modalEventSeats"></span></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" data-modal-close>Close</button>
+        <a href="register.html" class="btn btn-primary">Proceed to Register</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="brand-logo" style="margin-bottom: 1rem;">
+          <span class="logo-icon">🎓</span>
+          <span>StudentHub</span>
+        </div>
+        <p>The centralized, secure, and modern student academic information portal for the Faculty of Technology & Engineering (FTE), CHARUSAT.</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Course: ITUE203 - Web Development Frameworks (Semester 3)</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Academic Modules</h4>
+        <ul class="footer-links">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="profile.html">Student Profile</a></li>
+          <li><a href="attendance.html">Attendance Monitor</a></li>
+          <li><a href="assignments.html">Assignments</a></li>
+          <li><a href="results.html">Semester Results</a></li>
+          <li><a href="timetable.html">Weekly Timetable</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Practicals & Features</h4>
+        <ul class="footer-links">
+          <li><a href="register.html">Registration & CAPTCHA (P5)</a></li>
+          <li><a href="events.html">Events JSON Fetch API (P6)</a></li>
+          <li><a href="admin.html">Admin Submissions Viewer (P7)</a></li>
+          <li><a href="submissions.php">PHP File Storage (P7)</a></li>
+          <li><a href="faq.html">Collapsible FAQs (P4)</a></li>
+          <li><a href="feedback.html">Ratings & Feedback (P7)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>University & Support</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About Department</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="settings.html">Account Settings</a></li>
+          <li><a href="login.html">Student / Admin Login</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 StudentHub. All Rights Reserved. Built for ITUE203 Lab Submissions.</p>
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <span class="developer-tag">Developer: Yuvraj Parmar (25DCE070) - 3rd Sem CE</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
-
-</html> 
+</html>

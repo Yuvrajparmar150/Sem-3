@@ -1,141 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Timetable | Student Hub</title>
-
-<link rel="stylesheet" href="class.css">
-
-<style>
-
-body{
-display:block;
-background:#eef3f8;
-}
-
-.navbar{
-background:#0f4c81;
-padding:18px;
-text-align:center;
-}
-
-.navbar a{
-margin:8px;
-}
-
-.container2{
-width:95%;
-max-width:1100px;
-margin:40px auto;
-background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Weekly Academic Timetable - StudentHub: Day-wise schedule, lecture timings, lab allocations and classroom numbers for Computer Engineering.">
+  <title>Weekly Timetable | StudentHub</title>
+  
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="navbar">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+        <span class="badge-tag">Timetable</span>
+      </a>
 
-<a href="dashboard.html">Dashboard</a>
-<a href="profile.html">Profile</a>
-<a href="attendance.html">Attendance</a>
-<a href="assignments.html">Assignments</a>
-<a href="results.html">Results</a>
-<a href="timetable.html">Timetable</a>
-<a href="settings.html">Settings</a>
-<a href="about.html">About</a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="timetable.html" class="nav-link active">Timetable</a></li>
+          <li class="nav-item"><a href="attendance.html" class="nav-link">Attendance</a></li>
+          <li class="nav-item"><a href="assignments.html" class="nav-link">Assignments</a></li>
+          <li class="nav-item"><a href="results.html" class="nav-link">Results</a></li>
+        </ul>
+      </nav>
 
-</div>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+        <a href="index.html" class="btn btn-outline btn-sm">Log Out</a>
+        <button class="hamburger-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
 
-<div class="container2">
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo"><span class="logo-icon">🎓</span><span>StudentHub</span></div>
+      <button class="mobile-nav-close btn btn-outline btn-sm">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+      <li><a href="timetable.html" class="nav-link active">🕒 Timetable</a></li>
+      <li><a href="attendance.html" class="nav-link">📈 Attendance</a></li>
+      <li><a href="assignments.html" class="nav-link">📑 Assignments</a></li>
+      <li><a href="results.html" class="nav-link">🏆 Results</a></li>
+      <li><a href="profile.html" class="nav-link">👤 Profile</a></li>
+      <li><a href="events.html" class="nav-link">🎟️ Events</a></li>
+    </ul>
+  </aside>
 
-<h1>Weekly Timetable</h1>
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="dashboard.html">Dashboard</a>
+      <span class="separator">/</span>
+      <span class="current">Class Timetable</span>
+    </div>
 
-<table>
+    <!-- Header Banner -->
+    <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(6,182,212,0.08));">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge badge-primary" style="margin-bottom: 0.4rem;">Semester 3 (Odd 2026-27)</span>
+          <h1>Computer Engineering Class Schedule</h1>
+          <p style="margin-bottom: 0;">Faculty of Technology & Engineering (FTE) &bull; Classroom: Room 302 &bull; Computing Lab 4</p>
+        </div>
+        <button class="btn btn-outline-primary" onclick="window.print()">🖨️ Print Schedule</button>
+      </div>
+    </div>
 
-<tr>
+    <!-- Full Weekly Timetable Table -->
+    <section class="card" style="margin-bottom: 2.5rem;">
+      <div class="card-header">
+        <h3>Master Weekly Grid</h3>
+        <span class="badge badge-primary">Mon - Fri (09:00 AM - 04:00 PM)</span>
+      </div>
 
-<th>Day</th>
-<th>9-10</th>
-<th>10-11</th>
-<th>11-12</th>
-<th>1-2</th>
-<th>2-3</th>
+      <div class="table-responsive">
+        <table class="data-table" style="text-align: center;">
+          <thead>
+            <tr>
+              <th style="text-align: left;">Day / Slot</th>
+              <th>09:00 - 10:00</th>
+              <th>10:00 - 11:00</th>
+              <th>11:00 - 12:00</th>
+              <th style="background: var(--bg-body); color: var(--text-muted);">12:00 - 01:00</th>
+              <th>01:00 - 02:00</th>
+              <th>02:00 - 04:00 (Lab Slot)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left; font-weight: 700; color: var(--primary);">Monday</td>
+              <td><strong>C++ (Theory)</strong><br><small>Room 302</small></td>
+              <td><strong>Mathematics</strong><br><small>Room 302</small></td>
+              <td><strong>Physics</strong><br><small>Room 302</small></td>
+              <td rowspan="5" style="background: var(--bg-body); vertical-align: middle; font-weight: 600; color: var(--text-muted); writing-mode: vertical-rl; transform: rotate(180deg); padding: 0.5rem;">LUNCH BREAK</td>
+              <td><strong>Digital Electronics</strong><br><small>Room 304</small></td>
+              <td style="background: var(--primary-subtle);"><strong style="color: var(--primary);">WDF Lab (ITUE203)</strong><br><small>Lab 4 (P1-7)</small></td>
+            </tr>
+            <tr>
+              <td style="text-align: left; font-weight: 700; color: var(--primary);">Tuesday</td>
+              <td><strong>Mathematics</strong><br><small>Room 302</small></td>
+              <td><strong>Physics</strong><br><small>Room 302</small></td>
+              <td><strong>C++ (Theory)</strong><br><small>Room 302</small></td>
+              <td><strong>Communication Skills</strong><br><small>Language Lab</small></td>
+              <td style="background: var(--primary-subtle);"><strong style="color: var(--primary);">C++ Programming Lab</strong><br><small>Computing Lab 2</small></td>
+            </tr>
+            <tr>
+              <td style="text-align: left; font-weight: 700; color: var(--primary);">Wednesday</td>
+              <td><strong>Digital Electronics</strong><br><small>Room 304</small></td>
+              <td><strong>C++ (Theory)</strong><br><small>Room 302</small></td>
+              <td><strong>Mathematics</strong><br><small>Room 302</small></td>
+              <td><strong>Engineering Physics</strong><br><small>Room 302</small></td>
+              <td style="background: var(--success-subtle);"><strong style="color: var(--success);">Sports / Extra-Curricular</strong><br><small>Sports Complex</small></td>
+            </tr>
+            <tr>
+              <td style="text-align: left; font-weight: 700; color: var(--primary);">Thursday</td>
+              <td><strong>Physics</strong><br><small>Room 302</small></td>
+              <td><strong>Communication Skills</strong><br><small>Room 302</small></td>
+              <td><strong>Digital Electronics</strong><br><small>Room 304</small></td>
+              <td><strong>Mathematics</strong><br><small>Room 302</small></td>
+              <td style="background: var(--primary-subtle);"><strong style="color: var(--primary);">Digital Electronics Lab</strong><br><small>Hardware Lab 1</small></td>
+            </tr>
+            <tr>
+              <td style="text-align: left; font-weight: 700; color: var(--primary);">Friday</td>
+              <td colspan="2" style="background: var(--primary-subtle);"><strong style="color: var(--primary);">Web Dev Frameworks Lab</strong><br><small>Computing Lab 4</small></td>
+              <td><strong>Mathematics</strong><br><small>Room 302</small></td>
+              <td><strong>Digital Electronics</strong><br><small>Room 304</small></td>
+              <td style="background: var(--accent-subtle);"><strong style="color: var(--accent);">Central Library & Research</strong><br><small>Digital Library</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-</tr>
+    <!-- Faculty Contact Directory for this Semester -->
+    <section class="card">
+      <div class="card-header">
+        <h3>Course Instructors & Faculty In-Charge</h3>
+      </div>
+      <div class="grid-3">
+        <div style="padding: 1rem; border: 1px solid var(--border-light); border-radius: var(--radius-md);">
+          <div style="font-weight: 700;">Prof. S. R. Mehta</div>
+          <small style="color: var(--primary); font-weight: 600;">Web Development Frameworks (ITUE203)</small>
+          <div style="font-size: 0.85rem; margin-top: 0.35rem; color: var(--text-secondary);">srmehta@charusat.edu.in</div>
+        </div>
+        <div style="padding: 1rem; border: 1px solid var(--border-light); border-radius: var(--radius-md);">
+          <div style="font-weight: 700;">Prof. A. N. Patel</div>
+          <small style="color: var(--primary); font-weight: 600;">Object Oriented Programming (CEUE201)</small>
+          <div style="font-size: 0.85rem; margin-top: 0.35rem; color: var(--text-secondary);">anpatel@charusat.edu.in</div>
+        </div>
+        <div style="padding: 1rem; border: 1px solid var(--border-light); border-radius: var(--radius-md);">
+          <div style="font-weight: 700;">Dr. T. G. Trivedi</div>
+          <small style="color: var(--primary); font-weight: 600;">Discrete Mathematics (MAUE204)</small>
+          <div style="font-size: 0.85rem; margin-top: 0.35rem; color: var(--text-secondary);">tgtrivedi@charusat.edu.in</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<tr>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 StudentHub - CHARUSAT FTE.</p>
+      <span class="developer-tag">Yuvraj Parmar (25DCE070)</span>
+    </div>
+  </footer>
 
-<td>Monday</td>
-<td>C++</td>
-<td>Maths</td>
-<td>Physics</td>
-<td>DE</td>
-<td>Lab</td>
-
-</tr>
-
-<tr>
-
-<td>Tuesday</td>
-<td>Maths</td>
-<td>Physics</td>
-<td>C++</td>
-<td>Lab</td>
-<td>English</td>
-
-</tr>
-
-<tr>
-
-<td>Wednesday</td>
-<td>DE</td>
-<td>C++</td>
-<td>Maths</td>
-<td>Physics</td>
-<td>Sports</td>
-
-</tr>
-
-<tr>
-
-<td>Thursday</td>
-<td>Physics</td>
-<td>English</td>
-<td>DE</td>
-<td>C++</td>
-<td>Maths</td>
-
-</tr>
-
-<tr>
-
-<td>Friday</td>
-<td>C++ Lab</td>
-<td>C++ Lab</td>
-<td>Maths</td>
-<td>DE</td>
-<td>Library</td>
-
-</tr>
-
-</table>
-
-<br>
-
-<a href="dashboard.html">Back to Dashboard</a>
-
-</div>
-
+  <script src="js/main.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudentHub Admin Portal - Practical 7: Submissions viewer, CSV export, and student directory.">
+  <title>Admin Portal & Submissions | StudentHub (Practical 7)</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+        <span class="badge-tag">Admin & P7</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="register.html" class="nav-link">Register</a></li>
+          <li class="nav-item"><a href="admin.html" class="nav-link active">Admin Portal</a></li>
+          <li class="nav-item"><a href="submissions.php" class="nav-link">PHP View</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+        <a href="index.html" class="btn btn-outline btn-sm">Log Out</a>
+        <button class="hamburger-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo">
+        <span class="logo-icon">🎓</span>
+        <span>StudentHub</span>
+      </div>
+      <button class="mobile-nav-close btn btn-outline btn-sm">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+      <li><a href="events.html" class="nav-link">🎟️ Events</a></li>
+      <li><a href="register.html" class="nav-link">📝 Register</a></li>
+      <li><a href="admin.html" class="nav-link active">⚙️ Admin Portal</a></li>
+      <li><a href="submissions.php" class="nav-link">🐘 PHP Storage Viewer</a></li>
+      <li><a href="faq.html" class="nav-link">❓ FAQs</a></li>
+      <li><a href="about.html" class="nav-link">ℹ️ About</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">Admin Management & Submissions Viewer (Practical 7)</span>
+    </div>
+
+    <!-- Header Banner -->
+    <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(6,182,212,0.08));">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge badge-primary" style="margin-bottom: 0.5rem;">Practical 7: Server & File Storage</span>
+          <h1>Admin Portal & Submissions Manager</h1>
+          <p style="margin-bottom: 0;">Manage student registrations, monitor server file storage (JSON/CSV), and export records directly.</p>
+        </div>
+        <div style="display: flex; gap: 0.75rem;">
+          <button onclick="exportTableToCSV('studenthub_registrations.csv')" class="btn btn-primary">
+            📥 Export to CSV
+          </button>
+          <a href="submissions.php" class="btn btn-outline-primary">
+            🐘 Direct PHP Page
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <section class="grid-4" style="margin-bottom: 2.5rem;">
+      <div class="stat-card">
+        <div class="stat-icon blue">👥</div>
+        <div class="stat-info">
+          <div class="stat-value stat-counter" data-target="16" data-suffix="">16</div>
+          <div class="stat-label">Active Directory Profiles</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">📝</div>
+        <div class="stat-info">
+          <div class="stat-value" id="submissionCountBadge">Loading...</div>
+          <div class="stat-label">Stored Registrations</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon amber">📁</div>
+        <div class="stat-info">
+          <div class="stat-value">CSV & JSON</div>
+          <div class="stat-label">Storage Backend</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon purple">🔒</div>
+        <div class="stat-info">
+          <div class="stat-value">LOCK_EX</div>
+          <div class="stat-label">Safe File Writing</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Submissions Table Section -->
+    <section class="card" style="margin-bottom: 3rem;">
+      <div class="card-header" style="flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3>Practical 7: Form Submissions Records</h3>
+          <p style="font-size: 0.875rem; margin-bottom: 0;">Records written to <code>data/registrations.json</code> and <code>data/registrations.csv</code>.</p>
+        </div>
+        <div style="min-width: 250px;">
+          <input type="search" id="submissionSearchInput" class="form-control" placeholder="Search by name, email, roll no...">
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Student Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Course</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="submissionsTableBody">
+            <!-- Dynamic Records via js/main.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Students Directory Section (Practical 6 JSON Fetch) -->
+    <section class="card">
+      <div class="card-header" style="flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3>Student Directory (Loaded from <code>students.json</code>)</h3>
+          <p style="font-size: 0.875rem; margin-bottom: 0;">Dynamic directory with course filters, search, and GPA metrics.</p>
+        </div>
+        <div class="filter-controls">
+          <input type="search" id="studentSearchInput" class="form-control" placeholder="Search students..." style="width: 200px;">
+          <select id="studentCourseFilter" class="filter-select">
+            <option value="all">All Departments</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Information Technology">IT</option>
+            <option value="Artificial Intelligence">AI & DS</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+          </select>
+          <select id="studentSortSelect" class="filter-select">
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="gpa-desc">GPA (Highest)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="studentsGridContainer" class="grid-4" style="margin-top: 1.5rem;">
+        <!-- Dynamic Student Cards -->
+      </div>
+
+      <div id="studentsPagination" class="pagination-container"></div>
+    </section>
+  </main>
+
+  <!-- Record Details Modal -->
+  <div id="recordDetailsModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Registration Submission Details</h3>
+        <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" id="modalRecordContent">
+        <!-- Injected via js/main.js -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-modal-close>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 StudentHub. ITUE203 Practical 7 Admin View.</p>
+      <span class="developer-tag">Yuvraj Parmar (25DCE070)</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
