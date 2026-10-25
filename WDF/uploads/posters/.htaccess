@@ -1,0 +1,8 @@
+# Practical 12: upload directory protection - never execute scripts from here
+php_flag engine off
+RemoveHandler .php .phtml .php3 .php5
+RemoveType .php .phtml .php3 .php5
+Options -Indexes -ExecCGI
+<FilesMatch "\.(?i:php|phtml|phar|pl|py|cgi|sh)$">
+  Require all denied
+</FilesMatch>

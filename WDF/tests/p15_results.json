@@ -1,0 +1,344 @@
+[
+ {
+  "area": "Navigation",
+  "test": "All local links/assets in 16 HTML pages resolve (370 checked)",
+  "result": "PASS",
+  "detail": "370 links, 0 broken"
+ },
+ {
+  "area": "Navigation",
+  "test": "index.html returns 200",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Navigation",
+  "test": "register.html returns 200",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Navigation",
+  "test": "events.html returns 200",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Navigation",
+  "test": "faq.html returns 200",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Navigation",
+  "test": "admin.html returns 200",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Auth",
+  "test": "Anonymous user redirected from protected page",
+  "result": "PASS",
+  "detail": "HTTP 302 -> login.php?denied=1"
+ },
+ {
+  "area": "Auth",
+  "test": "Anonymous API call returns 401",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Auth",
+  "test": "Wrong password rejected with message",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Security",
+  "test": "SQL injection in login fails",
+  "result": "PASS",
+  "detail": "/php/login.php"
+ },
+ {
+  "area": "Auth",
+  "test": "Student login redirects to my_dashboard",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Security",
+  "test": "Session cookie is HttpOnly",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Security",
+  "test": "Session cookie SameSite=Lax",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "RBAC",
+  "test": "Student blocked from admin dashboard (403)",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "RBAC",
+  "test": "Student blocked from student CRUD (403)",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "RBAC",
+  "test": "Student can read events API (200)",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "RBAC",
+  "test": "Student cannot write via API (403)",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Auth",
+  "test": "Logout returns to login with message",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Auth",
+  "test": "Admin login redirects to admin dashboard",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Pages",
+  "test": "Admin dashboard loads for admin",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Pages",
+  "test": "Student CRUD loads for admin",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Pages",
+  "test": "Event CRUD loads for admin",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Pages",
+  "test": "AJAX CRUD page loads for admin",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Pages",
+  "test": "DB connection test loads for admin",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Security",
+  "test": "POST without CSRF token does not delete record",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Security",
+  "test": "Stored HTML in event title is escaped on output",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Security",
+  "test": "SQL injection in search returns 0 rows (prepared statements)",
+  "result": "PASS",
+  "detail": "total=0"
+ },
+ {
+  "area": "Security",
+  "test": "PHP file upload as poster is rejected",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Security",
+  "test": "Upload directory has .htaccess blocking script execution",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Security",
+  "test": "Passwords stored as bcrypt hash (password_hash)",
+  "result": "PASS",
+  "detail": "$2y$10$ppzzT8hAqqes0..."
+ },
+ {
+  "area": "API",
+  "test": "Missing CSRF header -> 403",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "API",
+  "test": "Invalid payload -> 422",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "API",
+  "test": "Valid create -> 201",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "API",
+  "test": "Duplicate create -> 409",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "API",
+  "test": "Soft delete -> 200",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "API",
+  "test": "Deleted record -> 404",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "API",
+  "test": "Unsupported method -> 405",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Audit",
+  "test": "audit_logs contains entries for admin actions",
+  "result": "PASS",
+  "detail": "13 rows"
+ },
+ {
+  "area": "Accessibility",
+  "test": "All 16 static pages contain <header>",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Accessibility",
+  "test": "All 16 static pages contain <nav>",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Accessibility",
+  "test": "All 16 static pages contain <main>",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Accessibility",
+  "test": "All 16 static pages contain <footer>",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Accessibility",
+  "test": "All 16 static pages contain skip link",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Accessibility",
+  "test": "Every static page has exactly one <h1>",
+  "result": "FAIL",
+  "detail": "['index.html', 'login.html', 'dashboard.html', 'profile.html']"
+ },
+ {
+  "area": "Accessibility",
+  "test": "<html lang> set on all pages",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Accessibility",
+  "test": "All <img> have alt attributes",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "area": "Accessibility",
+  "test": "All form fields have a label or aria-label",
+  "result": "FAIL",
+  "detail": "[('profile.html', 2, 0), ('admin.html', 4, 0), ('faq.html', 2, 0), ('attendance.html', 4, 0), ('assignments.html', 4, 0), ('settings.html', 3, 0)]"
+ },
+ {
+  "area": "Accessibility",
+  "test": "php/login.php: lang, main, heading, skip-link, labelled inputs",
+  "result": "PASS",
+  "detail": "{'lang': 'en', 'main': 1, 'h1': True, 'skip': 1, 'unl': 0}"
+ },
+ {
+  "area": "Accessibility",
+  "test": "php/register_db.php: lang, main, heading, skip-link, labelled inputs",
+  "result": "PASS",
+  "detail": "{'lang': 'en', 'main': 1, 'h1': True, 'skip': 1, 'unl': 0}"
+ },
+ {
+  "area": "Accessibility",
+  "test": "php/students_crud.php: lang, main, heading, skip-link, labelled inputs",
+  "result": "PASS",
+  "detail": "{'lang': 'en', 'main': 1, 'h1': True, 'skip': 1, 'unl': 0}"
+ },
+ {
+  "area": "Accessibility",
+  "test": "php/events_crud.php: lang, main, heading, skip-link, labelled inputs",
+  "result": "PASS",
+  "detail": "{'lang': 'en', 'main': 1, 'h1': True, 'skip': 1, 'unl': 0}"
+ },
+ {
+  "area": "Accessibility",
+  "test": "php/admin_dashboard.php: lang, main, heading, skip-link, labelled inputs",
+  "result": "PASS",
+  "detail": "{'lang': 'en', 'main': 1, 'h1': True, 'skip': 1, 'unl': 0}"
+ },
+ {
+  "area": "Accessibility",
+  "test": "php/ajax_crud.php: lang, main, heading, skip-link, labelled inputs",
+  "result": "PASS",
+  "detail": "{'lang': 'en', 'main': 1, 'h1': True, 'skip': 1, 'unl': 0}"
+ },
+ {
+  "area": "Responsive",
+  "test": "No horizontal overflow at 390px (7 pages)",
+  "result": "FAIL",
+  "detail": "['index', 'register', 'dashboard', 'events', 'about', 'faq', 'login']"
+ },
+ {
+  "area": "Responsive",
+  "test": "No horizontal overflow at 768px (7 pages)",
+  "result": "PASS",
+  "detail": "[]"
+ },
+ {
+  "area": "Responsive",
+  "test": "No horizontal overflow at 1280px (7 pages)",
+  "result": "PASS",
+  "detail": "[]"
+ },
+ {
+  "area": "Responsive",
+  "test": "No horizontal page overflow at 390px on PHP pages (6 pages)",
+  "result": "PASS",
+  "detail": "[]"
+ }
+]
